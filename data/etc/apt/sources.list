@@ -1,0 +1,17 @@
+
+# Debian
+deb http://ftp.fr.debian.org/debian wheezy main contrib non-free
+deb-src http://ftp.fr.debian.org/debian wheezy main contrib non-free
+
+# Security
+deb http://security.debian.org wheezy/updates main contrib non-free
+deb-src http://security.debian.org wheezy/updates main contrib non-free
+
+# Updates
+deb http://ftp.fr.debian.org/debian wheezy-updates main contrib non-free
+deb-src http://ftp.fr.debian.org/debian wheezy-updates main contrib non-free
+
+# Backports
+deb http://ftp.fr.debian.org/debian wheezy-backports main contrib non-free
+deb-src http://ftp.fr.debian.org/debian wheezy-backports main contrib non-free
+
