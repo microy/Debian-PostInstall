@@ -6,6 +6,9 @@
 #
 #--
 
+# Remove backup files
+find . -type f -name '*~' -exec rm -v {} \;
+
 # Remove previous configuration files
 rm -fv temp/mr-debian-minimal.tar.xz
 

@@ -1,23 +1,23 @@
 Source: mr-debian-minimal
 Section: admin
-Priority: extra
-Maintainer: Michaël Roy <michael.roy@u-bourgogne.fr>
+Priority: optional
+Maintainer: Michaël Roy <microygh@gmail.com>
 
 Package: mr-debian-minimal
 Architecture: all
 Depends: tar, xz-utils, nano, bash, bash-completion
-Description: Configuration de base pour Wheezy
-  Remplace :
+Description: Minimal configuration for Debian stable
+  Replace :
     /etc/bash.bashrc
     /etc/inputrc
     /etc/nanorc
     /etc/apt/sources.list
-  Ajoute : 
+  Add : 
     /etc/fonts/local.conf
     /etc/modprobe.d/blacklist-pcspkr.conf
     /etc/udev/rules.d/75-persistent-net-generator.rules
     /usr/share/nano/conf.nanorc
-  Retire:
+  Remove:
     /etc/udev/rules.d/70-persistent-net.rules
     /home/$USER/.bashrc
     /home/$USER/.profile
