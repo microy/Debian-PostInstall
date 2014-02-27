@@ -7,7 +7,7 @@
 #--
 
 # Remove previous files
-./clean-package.sh
+./clean.sh
 
 # Package new configuration files
 cd data
