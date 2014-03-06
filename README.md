@@ -7,6 +7,7 @@ Minimal configuration for Debian stable
    - /etc/inputrc
    - /etc/nanorc
    - /etc/apt/sources.list
+   - /etv/vim/vimrc
 
 ## Add : 
    - /etc/fonts/local.conf

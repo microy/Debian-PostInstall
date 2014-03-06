@@ -5,13 +5,15 @@ Maintainer: Michaël Roy <microygh@gmail.com>
 
 Package: mr-debian-minimal
 Architecture: all
-Depends: tar, xz-utils, nano, bash, bash-completion
+Depends: tar, xz-utils, nano, bash, bash-completion, vim
+Conflicts: vim-tiny
 Description: Minimal configuration for Debian stable
   Replace :
     /etc/bash.bashrc
     /etc/inputrc
     /etc/nanorc
     /etc/apt/sources.list
+    /etc/vim/vimrc
   Add : 
     /etc/fonts/local.conf
     /etc/modprobe.d/blacklist-pcspkr.conf
