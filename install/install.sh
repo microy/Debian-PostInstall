@@ -3,7 +3,7 @@
 set -e
 
 echo "Copy configuration files..."
-tar xvpfJ /usr/share/mr-debian-minimal/mr-debian-minimal.tar.xz -C /
+tar xvfJ /usr/share/mr-debian-minimal/mr-debian-minimal.tar.xz -C /
 
 echo "Disable network interfaces in udev..."
 rm -fv /etc/udev/rules.d/70-persistent-net.rules

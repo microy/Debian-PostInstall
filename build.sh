@@ -11,7 +11,7 @@
 
 # Package new configuration files
 cd data
-tar cvfpJ ../temp/mr-debian-minimal.tar.xz *
+tar cvfJ ../install/mr-debian-minimal.tar.xz *
 cd ..
 
 # Build new package
