@@ -1,4 +1,11 @@
-mr-debian-minimal (1.0) UNRELEASED; urgency=low
+mr-debian-minimal (1.1) stable; urgency=low
+
+  * Cleanup bash.bashrc.
+  * Add vimrc.
+
+ -- Michaël Roy <microygh@gmail.com>  Fri, 07 Mar 2014 16:00:26 +0100
+
+mr-debian-minimal (1.0) stable; urgency=low
 
   * Initial Release.
 
