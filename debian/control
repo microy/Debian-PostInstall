@@ -5,7 +5,7 @@ Maintainer: Michaël Roy <microygh@gmail.com>
 
 Package: mr-debian-minimal
 Architecture: all
-Depends: tar, xz-utils, nano, bash, bash-completion, vim, coreutils, ncurses-bin
+Depends: tar, xz-utils, nano, bash, bash-completion, vim
 Conflicts: vim-tiny
 Description: Minimal configuration for Debian stable
   Replace :
@@ -13,11 +13,11 @@ Description: Minimal configuration for Debian stable
     /etc/inputrc
     /etc/nanorc
     /etc/apt/sources.list
-    /etc/vim/vimrc
   Add : 
     /etc/fonts/local.conf
     /etc/modprobe.d/blacklist-pcspkr.conf
     /etc/udev/rules.d/75-persistent-net-generator.rules
+    /etc/vim/vimrc.local
     /usr/share/nano/conf.nanorc
   Remove:
     /etc/udev/rules.d/70-persistent-net.rules
