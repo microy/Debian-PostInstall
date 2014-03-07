@@ -5,7 +5,7 @@ Maintainer: Michaël Roy <microygh@gmail.com>
 
 Package: mr-debian-minimal
 Architecture: all
-Depends: tar, xz-utils, nano, bash, bash-completion, vim
+Depends: tar, xz-utils, nano, bash, bash-completion, vim, coreutils, ncurses-bin
 Conflicts: vim-tiny
 Description: Minimal configuration for Debian stable
   Replace :
