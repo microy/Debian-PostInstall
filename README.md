@@ -7,12 +7,12 @@ Minimal configuration for Debian stable
    - /etc/inputrc
    - /etc/nanorc
    - /etc/apt/sources.list
-   - /etv/vim/vimrc
 
 ## Add : 
    - /etc/fonts/local.conf
    - /etc/modprobe.d/blacklist-pcspkr.conf
    - /etc/udev/rules.d/75-persistent-net-generator.rules
+   - /etc/vim/vimrc.local
    - /usr/share/nano/conf.nanorc
 
 ## Remove:
