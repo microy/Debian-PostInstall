@@ -24,12 +24,14 @@ do
 	rm -fv /home/$USER/.profile
 done
 
+echo "Remove packages..."
+apt-get purge -y --force-yes vim-tiny
+
 echo "Update packages..."
 apt-get update
 apt-get upgrade
 
-echo "Install vim..."
-apt-get purge -y --force-yes vim-tiny
+echo "Install packages..."
 apt-get install -y --force-yes vim tree htop 
 
 echo "Done."
