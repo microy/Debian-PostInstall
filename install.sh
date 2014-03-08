@@ -34,4 +34,7 @@ apt-get upgrade
 echo "Install packages..."
 apt-get install -y --force-yes vim tree htop 
 
+echo "Clean apt cache..."
+apt-get clean
+
 echo "Done."
