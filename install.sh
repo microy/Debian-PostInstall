@@ -24,7 +24,7 @@ do
 	rm -fv /home/$USER/.profile
 done
 
-echo "Update packages.."
+echo "Update packages..."
 apt-get update
 apt-get upgrade
 
