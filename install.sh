@@ -3,7 +3,7 @@
 set -e
 
 echo 'Copy configuration files...'
-tar xvfJ /usr/share/mr-debian-minimal/mr-debian-minimal.tar.xz -C /
+cp -rfv config/* /
 
 echo 'Disable network interfaces in udev...'
 rm -fv /etc/udev/rules.d/70-persistent-net.rules
@@ -24,5 +24,12 @@ do
 	rm -fv /home/$USER/.profile
 done
 
+echo 'Update packages..'
+apt-get update
+apt-get upgrade
+
+echo 'Install vim...'
+apt-get purge vim-tiny
+apt-get install vim
 
 echo 'Done.'

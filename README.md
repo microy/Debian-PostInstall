@@ -1,25 +1,26 @@
-# Debian Minimal Configuration
+# Debian Post-Install
 
-Minimal configuration for Debian stable
+Post-installation script for Debian stable
 
-## Replace :
+### Replace :
+   - /etc/apt/sources.list
    - /etc/bash.bashrc
    - /etc/inputrc
    - /etc/nanorc
-   - /etc/apt/sources.list
 
-## Add : 
+### Add : 
    - /etc/fonts/local.conf
    - /etc/modprobe.d/blacklist-pcspkr.conf
    - /etc/udev/rules.d/75-persistent-net-generator.rules
    - /etc/vim/vimrc.local
    - /usr/share/nano/conf.nanorc
 
-## Remove:
+### Remove:
    - /etc/udev/rules.d/70-persistent-net.rules
+   - /etc/skel/.bashrc
+   - /etc/skel/.profile
    - /home/$USER/.bashrc
    - /home/$USER/.profile
    - /root/.bashrc
    - /root/.profile
-   - /etc/skel/.bashrc
-   - /etc/skel/.profile
+
