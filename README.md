@@ -2,6 +2,8 @@
 
 Post-installation script for Debian stable
 
+## Configuration files
+
 ### Replace :
    - /etc/apt/sources.list
    - /etc/bash.bashrc
@@ -24,3 +26,12 @@ Post-installation script for Debian stable
    - /root/.bashrc
    - /root/.profile
 
+## Packages
+
+### Add :
+   - vim
+   - tree
+   - htop
+
+### Remove :
+   - vim-tiny
