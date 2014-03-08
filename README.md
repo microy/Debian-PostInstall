@@ -1,7 +1,7 @@
 # Debian Post-Install
 
 Post-installation script for Debian stable :
-  - Configure bash, nano, vim, and apt sources
+  - Configure bash, nano, vim, font rendering, and apt sources
   - Disable the PC speaker
   - Disable network interfaces in udev
   - Remove and install some packages
