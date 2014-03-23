@@ -12,7 +12,7 @@ done
 
 # Restore previous configuration files
 INSTALLDIR='/usr/share/debian-postinstall'
-cp -Rfv $INSTALLDIR/backup/* /
+cp -pRfv $INSTALLDIR/backup/* /
 
 # Delete installation directory
 rm -Rfv $INSTALLDIR
