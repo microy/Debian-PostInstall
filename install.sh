@@ -4,14 +4,22 @@
 # Post-installation script for Debian stable
 #
 
-# Backup previous configuration files
+# Variables
 CONFFILES='/etc/inputrc /etc/apt/sources.list /etc/bash.bashrc /etc/nanorc /etc/skel/.bashrc /etc/skel/.profile'
+INSTALLDIR='/usr/share/debian-postinstall'
+
+# Create installation directory
+mkdir $INSTALLDIR
+cp -Rfv . $INSTALLDIR
+
+# Backup previous configuration files
+mkdir $INSTALLDIR/backup
 for FILE in $CONFFILES; do
-	cp -fv $FILE $FILE~
+	cp -fv $FILE $INSTALLDIR/backup$FILE
 done
 
 # Copy configuration files
-cp -rfv config/* /
+cp -Rfv config/* /
 
 # Remove previous bash configuration files
 rm -fv /etc/skel/.profile
@@ -31,5 +39,5 @@ rm -fv /etc/udev/rules.d/70-persistent-net.rules
 # Update packages
 apt-get update
 apt-get purge -y --force-yes vim-tiny
-apt-get install -y --force-yes vim tree htop 
+apt-get install -y --force-yes vim tree htop bash-completion nano
 apt-get clean
