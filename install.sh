@@ -15,7 +15,7 @@ cp -Rfv . $INSTALLDIR
 # Backup previous configuration files
 mkdir $INSTALLDIR/backup
 for FILE in $CONFFILES; do
-	cp -fv $FILE $INSTALLDIR/backup$FILE
+	cp -fv --parents $FILE $INSTALLDIR/backup
 done
 
 # Copy configuration files
