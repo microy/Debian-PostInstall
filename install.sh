@@ -6,18 +6,12 @@
 
 
 # Create installation directory
-INSTALLDIR='/usr/share/debian-postinstall'
+INSTALLDIR=`cat installdir`
 mkdir $INSTALLDIR
 cp -Rfv . $INSTALLDIR
 
 # Backup previous configuration files
-CONFFILES=`find config -type f | sed 's:^config::'`
-mkdir $INSTALLDIR/backup
-for FILE in $CONFFILES; do
-	if [ -f $FILE ]; then
-		cp -pfv --parents $FILE $INSTALLDIR/backup
-	fi
-done
+. /config-backup.sh
 
 # Backup and remove previous bash configuration files
 DIRLIST="/root /etc/skel `ls /home | sed 's:^:/home/:'`"
