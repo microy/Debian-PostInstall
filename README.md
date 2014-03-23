@@ -9,5 +9,5 @@ Post-installation script for Debian stable :
   - Install and configure vim (syntax highlighting)
   - Disable the PC speaker
   - Disable persistent network interface rules in udev
-  - Install tree and htop
-  - Remove vim.tiny and bash-completion
+  - Install tree, htop, and bash-completion
+  - Remove vim.tiny
