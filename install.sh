@@ -8,14 +8,14 @@
 mkdir backup
 
 # Backup previous configuration files
-for FILE in `find config -type f | sed 's:^config::'`; do
+for FILE in $(find config -type f | sed 's:^config::'); do
 	if [ -f $FILE ]; then
 		cp -pfv --parents $FILE backup
 	fi
 done
 
 # Backup and remove previous bash configuration files
-for DIR in "/root /etc/skel `ls /home | sed 's:^:/home/:'`"; do
+for DIR in $(echo "/root /etc/skel `ls /home | sed 's:^:/home/:'`"); do
 	cp -pfv --parents $DIR/.bashrc $DIR/.profile backup
 	rm -fv $DIR/.bashrc $DIR/.profile
 done
