@@ -4,19 +4,19 @@
 # Post-installation script for Debian stable
 #
 
-
-# Create installation directory
-INSTALLDIR=`cat installdir`
-mkdir $INSTALLDIR
-cp -Rfv . $INSTALLDIR
+# Create backup directory
+mkdir backup
 
 # Backup previous configuration files
-. /config-backup.sh
+for FILE in `find config -type f | sed 's:^config::'`; do
+	if [ -f $FILE ]; then
+		cp -pfv --parents $FILE backup
+	fi
+done
 
 # Backup and remove previous bash configuration files
-DIRLIST="/root /etc/skel `ls /home | sed 's:^:/home/:'`"
-for DIR in $DIRLIST; do
-	cp -pfv --parents $DIR/.bashrc $DIR/.profile $INSTALLDIR/backup
+for DIR in "/root /etc/skel `ls /home | sed 's:^:/home/:'`"; do
+	cp -pfv --parents $DIR/.bashrc $DIR/.profile backup
 	rm -fv $DIR/.bashrc $DIR/.profile
 done
 

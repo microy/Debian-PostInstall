@@ -4,8 +4,10 @@
 # Remove the post-installation configuration
 #
 
-# Restore previous configuration files
-. /config-restore.sh
+# Delete local configuration files
+for FILE in `find config -type f | sed 's:^config::'`; do
+	rm -fv $FILE
+done
 
-# Delete installation directory
-rm -Rfv `cat installdir`
+# Restore previous configuration files
+cp -pRfv backup/* /
