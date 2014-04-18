@@ -16,8 +16,8 @@ done
 
 # Backup and remove previous bash configuration files
 for DIR in $(echo "/root /etc/skel `ls /home | sed 's:^:/home/:'`"); do
-	cp -pfv --parents $DIR/.bashrc $DIR/.profile backup
-	rm -fv $DIR/.bashrc $DIR/.profile
+	cp -pfv --parents $DIR/.bashrc backup
+	rm -fv $DIR/.bashrc
 done
 
 # Copy local configuration files
