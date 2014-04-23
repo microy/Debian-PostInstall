@@ -44,13 +44,6 @@ xterm*|rxvt*)
     ;;
 esac
 
-# Enable programmable completion features
-if [ -f /usr/share/bash-completion/bash_completion ]; then
-  . /usr/share/bash-completion/bash_completion
-elif [ -f /etc/bash_completion ]; then
-  . /etc/bash_completion
-fi
-
 # Aliases
 alias ls='ls -h --color=auto --group-directories-first'
 alias ll='ls -lv'
