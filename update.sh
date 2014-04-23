@@ -6,8 +6,8 @@
 
 # Restore previous configuration files
 if [ -d backup ]; then
-	source remove.sh
+	. ./remove.sh
 fi
 
 # Install new configuration files
-source install.sh
+. ./install.sh

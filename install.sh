@@ -9,14 +9,14 @@ mkdir backup
 
 # Backup previous configuration files
 for FILE in $(find config -type f | sed 's:^config::'); do
-	if [ -f $FILE ]; then
-		cp -pfv --parents $FILE backup
+	if [ -f "$FILE" ]; then
+		cp -pfv --parents "$FILE" backup
 	fi
 done
 
 # Backup previous .bashrc files
 for DIR in $(echo "/root `ls /home | sed 's:^:/home/:'`"); do
-	if [ $DIR == '/home/lost+found' ]; then continue; fi
+	if [ "$DIR" = '/home/lost+found' ]; then continue; fi
 	cp -pfv --parents $DIR/.bashrc backup
 done
 
@@ -26,7 +26,7 @@ cp -Rfv config/* /
 # Overwrite .bashrc files
 cp -fv /etc/skel/.bashrc /root
 for TARGETUSER in $(ls /home); do
-	if [ $TARGETUSER == 'lost+found' ]; then continue; fi
+	if [ "$TARGETUSER" = 'lost+found' ]; then continue; fi
 	cp -fv /etc/skel/.bashrc /home/$TARGETUSER
 	chown $TARGETUSER:$TARGETUSER /home/$TARGETUSER/.bashrc
 done
