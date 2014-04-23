@@ -1,4 +1,4 @@
-#! /bin/bash
+#! /bin/sh
 
 #
 # Post-installation script for Debian stable

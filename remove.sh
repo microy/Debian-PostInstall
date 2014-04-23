@@ -1,4 +1,4 @@
-#! /bin/bash
+#! /bin/sh
 
 #
 # Remove the post-installation configuration
