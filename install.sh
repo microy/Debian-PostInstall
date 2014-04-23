@@ -14,19 +14,16 @@ for FILE in $(find config -type f | sed 's:^config::'); do
 	fi
 done
 
-# Backup previous bash configuration files
+# Backup previous .bashrc files
 for DIR in $(echo "/root `ls /home | sed 's:^:/home/:'`"); do
 	if [ $DIR == '/home/lost+found' ]; then continue; fi
 	cp -pfv --parents $DIR/.bashrc backup
 done
 
-# Archive the backup directory
-tar cvfJ backup-$(date "+%Y%m%d").tar.xz backup/*
-
 # Copy local configuration files
 cp -Rfv config/* /
 
-# Overwrite bash configuration files
+# Overwrite .bashrc files
 cp -fv /etc/skel/.bashrc /root
 for TARGETUSER in $(ls /home); do
 	if [ $TARGETUSER == 'lost+found' ]; then continue; fi

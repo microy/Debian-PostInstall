@@ -11,3 +11,7 @@ done
 
 # Restore previous configuration files
 cp -pRfv backup/* /
+
+# Archive the backup directory and remove it
+tar cvfJ backup-$(date "+%Y%m%d").tar.xz backup
+rm -rfv backup
