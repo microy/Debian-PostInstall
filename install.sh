@@ -14,14 +14,25 @@ for FILE in $(find config -type f | sed 's:^config::'); do
 	fi
 done
 
-# Backup and remove previous bash configuration files
-for DIR in $(echo "/root /etc/skel `ls /home | sed 's:^:/home/:'`"); do
+# Backup previous bash configuration files
+for DIR in $(echo "/root `ls /home | sed 's:^:/home/:'`"); do
+	if [ $DIR == '/home/lost+found' ]; then continue; fi
 	cp -pfv --parents $DIR/.bashrc backup
-	rm -fv $DIR/.bashrc
 done
+
+# Archive the backup directory
+tar cvfJ backup-$(date "+%Y%m%d").tar.xz backup/*
 
 # Copy local configuration files
 cp -Rfv config/* /
+
+# Overwrite bash configuration files
+cp -fv /etc/skel/.bashrc /root
+for TARGETUSER in $(ls /home); do
+	if [ $TARGETUSER == 'lost+found' ]; then continue; fi
+	cp -fv /etc/skel/.bashrc /home/$TARGETUSER
+	chown $TARGETUSER:$TARGETUSER /home/$TARGETUSER/.bashrc
+done
 
 # Remove previous network interface detection in udev
 rm -fv /etc/udev/rules.d/70-persistent-net.rules
@@ -29,5 +40,5 @@ rm -fv /etc/udev/rules.d/70-persistent-net.rules
 # Update packages
 apt-get update
 apt-get purge -y --force-yes vim-tiny
-apt-get install -y --force-yes vim tree htop bash-completion nano
+apt-get install -y --force-yes vim tree htop
 apt-get clean
