@@ -10,4 +10,4 @@ if [ -d backup ]; then
 fi
 
 # Install new configuration files
-source install.h
+source install.sh
