@@ -44,6 +44,7 @@ xterm*|rxvt*)
     ;;
 esac
 
+<<<<<<< HEAD
 # enable bash completion in interactive shells
 if ! shopt -oq posix; then
   if [ -f /usr/share/bash-completion/bash_completion ]; then
@@ -53,6 +54,8 @@ if ! shopt -oq posix; then
   fi
 fi
 
+=======
+>>>>>>> 5d3d3edb13bc1b7565b276f9ce798f601c5d76ff
 # Aliases
 alias ls='ls -h --color=auto --group-directories-first'
 alias ll='ls -lv'
