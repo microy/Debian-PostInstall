@@ -31,9 +31,6 @@ for TARGETUSER in $(ls /home); do
 	chown $TARGETUSER:$TARGETUSER /home/$TARGETUSER/.bashrc
 done
 
-# Remove previous network interface detection in udev
-rm -fv /etc/udev/rules.d/70-persistent-net.rules
-
 # Update packages
 apt-get update
 apt-get purge -y --force-yes vim-tiny
