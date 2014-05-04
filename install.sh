@@ -4,6 +4,11 @@
 # Post-installation script for Debian stable
 #
 
+# If there's a backup folder, remove previous configuration
+if [ -d backup ]; then
+	. ./remove.sh
+fi
+
 # Create backup directory
 mkdir backup
 
@@ -19,6 +24,9 @@ for DIR in $(echo "/root `ls /home | sed 's:^:/home/:'`"); do
 	if [ "$DIR" = '/home/lost+found' ]; then continue; fi
 	cp -pfv --parents $DIR/.bashrc backup
 done
+
+# Archive the backup directory
+tar cvfJ backup-$(date "+%Y%m%d").tar.xz backup
 
 # Copy local configuration files
 cp -Rfv config/* /
