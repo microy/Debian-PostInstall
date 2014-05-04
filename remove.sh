@@ -5,7 +5,7 @@
 #
 
 # If there's no backup, don't do anything
-if [ ! -d backup ]; then
+if [ ! -d backup ]; then
 	exit
 fi
 

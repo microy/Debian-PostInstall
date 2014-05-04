@@ -5,7 +5,7 @@
 #
 
 # If there's a backup folder, remove previous configuration
-if [ -d backup ]; then
+if [ -d backup ]; then
 	. ./remove.sh
 fi
 
