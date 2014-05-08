@@ -6,7 +6,7 @@
 
 # If there's no backup, don't do anything
 if [ ! -d backup ]; then
-	echo 'No backup diretory present...'
+	echo 'No backup directory present...'
 	exit
 fi
 
