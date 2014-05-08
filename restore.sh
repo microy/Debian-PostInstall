@@ -6,6 +6,7 @@
 
 # If there's no backup, don't do anything
 if [ ! -d backup ]; then
+	echo 'No backup diretory present...'
 	exit
 fi
 
@@ -16,6 +17,3 @@ done
 
 # Restore previous configuration files
 cp -pRfv backup/* /
-
-# Remove the backup folder
-rm -rfv backup
