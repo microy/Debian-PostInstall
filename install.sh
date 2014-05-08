@@ -4,9 +4,9 @@
 # Post-installation script for Debian stable
 #
 
-# If there's a backup folder, remove previous configuration
+# If there's a backup folder, then delete it
 if [ -d backup ]; then
-	. ./remove.sh
+	rm -rfv backup
 fi
 
 # Create backup directory
