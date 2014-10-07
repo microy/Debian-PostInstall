@@ -11,3 +11,5 @@ deb http://ftp.fr.debian.org/debian wheezy-updates main contrib non-free
 # Backports
 deb http://ftp.fr.debian.org/debian wheezy-backports main contrib non-free
 
+# Mozilla
+deb http://mozilla.debian.net/ wheezy-backports iceweasel-release
