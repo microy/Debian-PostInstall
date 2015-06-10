@@ -8,9 +8,11 @@
 cp -v /etc/bash.bashrc /etc/bash.bashrc.backup
 
 # Backup previous .bashrc files
-for DIR in $(echo "/root `ls /home | sed 's:^:/home/:'`"); do
-	if [ "$DIR" = '/home/lost+found' ]; then continue; fi
-	cp -v $DIR/.bashrc $DIR/.bashrc.backup
+cp -fv /root/.bashrc /root/.bashrc.backup
+for TARGETUSER in $(ls /home); do
+	if [ "$TARGETUSER" = 'lost+found' ]; then continue; fi
+	cp -fv /home/$TARGETUSER/.bashrc /home/$TARGETUSER/.bashrc.backup
+	chown $TARGETUSER:$TARGETUSER /home/$TARGETUSER/.bashrc
 done
 
 # Install new global bash configuration file
