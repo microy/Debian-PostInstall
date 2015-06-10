@@ -8,5 +8,4 @@ Post-installation script for Debian stable :
   - Configure font rendering (antialiasing)
   - Configure vim (syntax highlighting)
   - Disable the PC speaker
-  - Install vim, tree, htop
-  - Remove vim.tiny
+  - Provide useful administration scripts
