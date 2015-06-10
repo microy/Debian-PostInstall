@@ -10,8 +10,7 @@ cp -fv /etc/issue.net /etc/issue.net.backup
 cp -fv /etc/motd /etc/motd.backup
 
 # Configure the new banners
-echo '
-Réseaux et Télécoms Auxerre
+echo 'IUT Réseaux et Télécoms Auxerre
 Debian GNU/Linux 8 \\n \\l
 ' > /etc/issue
 cp -fv /etc/issue /etc/issue.net
