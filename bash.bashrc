@@ -50,6 +50,9 @@ if ! shopt -oq posix; then
   fi
 fi
 
+# Do not bell on tab-completion
+bind "set bell-style none"
+
 # Aliases
 alias ls='ls -h --color=auto --group-directories-first'
 alias ll='ls -lv'
