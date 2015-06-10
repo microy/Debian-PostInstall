@@ -32,14 +32,14 @@ gsettings set org.gnome.desktop.privacy remember-recent-files false
 gsettings set org.gnome.settings-daemon.plugins.power button-power "shutdown"
 
 # Configure the background
-org.gnome.desktop.background picture-option zoom
-org.gnome.desktop.background picture-uri file:///usr/share/images/desktop-base/joy.xml
-org.gnome.desktop.background primary-color #0099cc
-org.gnome.desktop.background secondary-color #006699
-org.gnome.desktop.screensaver picture-option zoom
-org.gnome.desktop.screensaver picture-uri file:///usr/share/images/desktop-base/joy.xml
-org.gnome.desktop.screensaver primary-color #0099cc
-org.gnome.desktop.screensaver secondary-color #006699
+gsettings set org.gnome.desktop.background picture-option zoom
+gsettings set org.gnome.desktop.background picture-uri file:///usr/share/images/desktop-base/joy.xml
+gsettings set org.gnome.desktop.background primary-color #0099cc
+gsettings set org.gnome.desktop.background secondary-color #006699
+gsettings set org.gnome.desktop.screensaver picture-option zoom
+gsettings set org.gnome.desktop.screensaver picture-uri file:///usr/share/images/desktop-base/joy.xml
+gsettings set org.gnome.desktop.screensaver primary-color #0099cc
+gsettings set org.gnome.desktop.screensaver secondary-color #006699
 
 # Reload Gnome Shell
 gnome-shell --replace &
