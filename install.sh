@@ -4,11 +4,6 @@
 # Post-installation script for Debian stable
 #
 
-# If there's a backup folder, then delete it
-if [ -d backup ]; then
-	rm -rfv backup
-fi
-
 # Create backup directory
 mkdir backup
 
@@ -28,6 +23,9 @@ done
 # Archive the backup directory
 tar cvfJ backup-$(date "+%Y%m%d").tar.xz backup
 
+# Remove the backup directory
+rm -rfv backup
+
 # Copy local configuration files
 cp -Rfv config/* /
 
@@ -38,9 +36,3 @@ for TARGETUSER in $(ls /home); do
 	cp -fv /etc/skel/.bashrc /home/$TARGETUSER
 	chown $TARGETUSER:$TARGETUSER /home/$TARGETUSER/.bashrc
 done
-
-# Update packages
-apt-get update
-apt-get purge -y --force-yes vim-tiny
-apt-get install -y --force-yes vim tree htop
-apt-get clean
