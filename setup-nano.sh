@@ -5,10 +5,10 @@
 #
 
 # Backup nano configuration file
-cp -v /etc/nanorc /etc/nanorc.backup
+cp -fv /etc/nanorc /etc/nanorc.backup
 
 # Install configuration file syntax highlighting
-cp -v conf.nanorc /usr/share/nano/conf.nanorc
+cp -fv conf.nanorc /usr/share/nano/conf.nanorc
 
 # Setup nano to use the syntax highlight for configuration files
 echo "
