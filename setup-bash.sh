@@ -12,7 +12,7 @@ cp -fv /root/.bashrc /root/.bashrc.backup
 for TARGETUSER in $(ls /home); do
 	if [ "$TARGETUSER" = 'lost+found' ]; then continue; fi
 	cp -fv /home/$TARGETUSER/.bashrc /home/$TARGETUSER/.bashrc.backup
-	chown $TARGETUSER:$TARGETUSER /home/$TARGETUSER/.bashrc
+	chown $TARGETUSER:$TARGETUSER /home/$TARGETUSER/.bashrc.backup
 done
 
 # Install new global bash configuration file
