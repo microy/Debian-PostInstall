@@ -32,14 +32,21 @@ gsettings set org.gnome.desktop.privacy remember-recent-files false
 gsettings set org.gnome.settings-daemon.plugins.power button-power "shutdown"
 
 # Configure the background
-gsettings set org.gnome.desktop.background picture-option zoom
 gsettings set org.gnome.desktop.background picture-uri file:///usr/share/images/desktop-base/joy.xml
-gsettings set org.gnome.desktop.background primary-color #0099cc
-gsettings set org.gnome.desktop.background secondary-color #006699
-gsettings set org.gnome.desktop.screensaver picture-option zoom
 gsettings set org.gnome.desktop.screensaver picture-uri file:///usr/share/images/desktop-base/joy.xml
-gsettings set org.gnome.desktop.screensaver primary-color #0099cc
-gsettings set org.gnome.desktop.screensaver secondary-color #006699
+
+# Remove unnecessary folders
+rmdir -v ~/Documents
+rmdir -v ~/Images
+rmdir -v ~/Modèles
+rmdir -v ~/Musique
+rmdir -v ~/Public
+rmdir -v ~/Téléchargements
+rmdir -v ~/Vidéos
+: > ~/.config/gtk-3.0/bookmarks
+
+# TODO
+# Disable tracker, event sounds
 
 # Reload Gnome Shell
 gnome-shell --replace &
