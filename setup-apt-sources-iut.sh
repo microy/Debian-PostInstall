@@ -5,7 +5,7 @@
 #
 
 # Backup previous configuration file
-cp /etc/apt/sources.list /etc/apt/sources.list.debian
+cp -fv /etc/apt/sources.list /etc/apt/sources.list.backup
 
 # Output the new configuration file
 echo "# Debian
@@ -20,5 +20,5 @@ deb http://10.129.44.50/debian jessie-updates main contrib non-free
 # Backports
 deb http://10.129.44.50/debian jessie-backports main contrib non-free" > /etc/apt/sources.list
 
-# Update the packages database
+# Update the package database
 apt update
