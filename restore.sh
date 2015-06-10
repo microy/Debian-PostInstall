@@ -11,7 +11,7 @@ if [ ! -d backup ]; then
 fi
 
 # Delete local configuration files
-for FILE in $(find config -type f | sed 's:^config::'); do
+for FILE in $(find setup -type f | sed 's:^setup::'); do
 	rm -fv $FILE
 done
 

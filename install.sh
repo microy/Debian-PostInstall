@@ -8,7 +8,7 @@
 mkdir backup
 
 # Backup previous configuration files
-for FILE in $(find config -type f | sed 's:^config::'); do
+for FILE in $(find setup -type f | sed 's:^setup::'); do
 	if [ -f "$FILE" ]; then
 		cp -pfv --parents "$FILE" backup
 	fi
@@ -27,7 +27,7 @@ tar cvfJ backup-$(date "+%Y%m%d").tar.xz backup
 rm -rfv backup
 
 # Copy local configuration files
-cp -Rfv config/* /
+cp -Rfv setup/* /
 
 # Overwrite .bashrc files
 cp -fv /etc/skel/.bashrc /root
