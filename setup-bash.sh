@@ -8,14 +8,13 @@
 DATE=$(date "+%Y%m%d")
 
 # Backup global bash configuration file
-cp -v /etc/bash.bashrc /etc/bash.bashrc.backup.$DATE
+cp -afv /etc/bash.bashrc /etc/bash.bashrc.backup.$DATE
 
 # Backup previous .bashrc files
-cp -fv /root/.bashrc /root/.bashrc.backup.$DATE
+cp -afv /root/.bashrc /root/.bashrc.backup.$DATE
 for TARGETUSER in $(ls /home); do
 	if [ "$TARGETUSER" = 'lost+found' ]; then continue; fi
-	cp -fv /home/$TARGETUSER/.bashrc /home/$TARGETUSER/.bashrc.backup.$DATE
-	chown $TARGETUSER:$TARGETUSER /home/$TARGETUSER/.bashrc.backup.$DATE
+	cp -afv /home/$TARGETUSER/.bashrc /home/$TARGETUSER/.bashrc.backup.$DATE
 done
 
 # Install new global bash configuration file

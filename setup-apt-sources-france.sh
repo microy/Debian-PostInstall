@@ -8,7 +8,7 @@
 DATE=$(date "+%Y%m%d")
 
 # Backup previous configuration file
-cp -fv /etc/apt/sources.list /etc/apt/sources.list.backup.$DATE
+cp -afv /etc/apt/sources.list /etc/apt/sources.list.backup.$DATE
 
 # Output the new configuration file
 echo "# Debian
