@@ -4,4 +4,4 @@
 # Remove backup files *~
 #
 
-find . -type f -name '*~' -exec rm -v {} \;
+find . -type f -name '*~' -print -delete

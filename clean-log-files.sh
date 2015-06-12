@@ -4,6 +4,6 @@
 # Cleanup log files
 #
 
-find /var/log -type f  -exec rm -fv {} \;
+find /var/log -type f -print -delete
 : > /var/log/btmp
 : > /var/log/wtmp
