@@ -7,24 +7,17 @@
 # Get the date
 DATE=$(date "+%Y%m%d")
 
-# Backup global bash configuration file
+# Configure global bash configuration file
 cp -afv /etc/bash.bashrc /etc/bash.bashrc.backup.$DATE
-
-# Backup previous .bashrc files
-cp -afv /root/.bashrc /root/.bashrc.backup.$DATE
-for TARGETUSER in $(ls /home); do
-	if [ "$TARGETUSER" = 'lost+found' ]; then continue; fi
-	cp -afv /home/$TARGETUSER/.bashrc /home/$TARGETUSER/.bashrc.backup.$DATE
-done
-
-# Install new global bash configuration file
 cp -fv bash.bashrc /etc/bash.bashrc
 
-# Overwrite .bashrc files
-cp -fv .bashrc /etc/skel/.bashrc
+# Configure .bashrc files
+cp -afv /root/.bashrc /root/.bashrc.backup.$DATE
 cp -fv .bashrc /root/.bashrc
-for TARGETUSER in $(ls /home); do
-	if [ "$TARGETUSER" = 'lost+found' ]; then continue; fi
-	cp -fv .bashrc /home/$TARGETUSER/.bashrc
-	chown $TARGETUSER:$TARGETUSER /home/$TARGETUSER/.bashrc
+cp -fv .bashrc /etc/skel/.bashrc
+for u in $(ls /home); do
+	if [ "$u" = 'lost+found' ]; then continue; fi
+	cp -afv /home/$u/.bashrc /home/$u/.bashrc.backup.$DATE
+	cp -fv .bashrc /home/$u/.bashrc
+	chown $u:$u /home/$u/.bashrc
 done
