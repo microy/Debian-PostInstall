@@ -19,7 +19,6 @@ gsettings set org.gnome.shell.calendar show-weekdate true
 
 # Disable lock screen
 gsettings set org.gnome.desktop.screensaver lock-enabled false
-gsettings set org.gnome.desktop.lockdown disable-lock-screen true
 
 # Disable event sounds
 gsettings set org.gnome.desktop.sound event-sounds false
