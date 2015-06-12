@@ -4,8 +4,11 @@
 # Configure Nano
 #
 
+# Get the date
+DATE=$(date "+%Y%m%d")
+
 # Backup nano configuration file
-cp -fv /etc/nanorc /etc/nanorc.backup
+cp -fv /etc/nanorc /etc/nanorc.backup.$DATE
 
 # Install configuration file syntax highlighting
 cp -fv conf.nanorc /usr/share/nano/conf.nanorc
