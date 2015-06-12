@@ -4,11 +4,8 @@
 # Setup apt sources (France)
 #
 
-# Get the date
-DATE=$(date "+%Y%m%d")
-
 # Backup previous configuration file
-cp -afv /etc/apt/sources.list /etc/apt/sources.list.backup.$DATE
+cp -afv /etc/apt/sources.list /etc/apt/sources.list.$(date "+%Y%m%d")
 
 # Output the new configuration file
 echo "# Debian

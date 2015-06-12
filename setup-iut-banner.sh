@@ -4,13 +4,10 @@
 # Configure the system banners
 #
 
-# Get the date
-DATE=$(date "+%Y%m%d")
-
 # Backup previous banners
-cp -afv /etc/issue /etc/issue.backup.$DATE
-cp -afv /etc/issue.net /etc/issue.net.backup.$DATE
-cp -afv /etc/motd /etc/motd.backup.$DATE
+cp -afv /etc/issue /etc/issue.$(date "+%Y%m%d")
+cp -afv /etc/issue.net /etc/issue.net.$(date "+%Y%m%d")
+cp -afv /etc/motd /etc/motd.$(date "+%Y%m%d")
 
 # Configure the new banners
 echo 'IUT Réseaux et Télécoms Auxerre
