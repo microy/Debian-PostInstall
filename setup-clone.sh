@@ -17,3 +17,7 @@ done
 # Remove persistent network interface in udev
 rm -fv /etc/udev/rules.d/70-persistent-net.rules
 : > /etc/udev/rules.d/75-persistent-net-generator.rules
+
+# Zero GRUB timeout
+sed -i 's/GRUB_TIMEOUT=.*/GRUB_TIMEOUT=0/' /etc/default/grub
+update-grub
