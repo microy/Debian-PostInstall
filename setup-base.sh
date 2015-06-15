@@ -1,10 +1,10 @@
 #! /bin/sh
 
 #
-# Install and configure useful console applications
+# Base system configuration
 #
 
-# Setup apt sources to use a french mirror
+# Setup apt sources in France
 cp -afv /etc/apt/sources.list /etc/apt/sources.list.$(date "+%Y%m%d")
 echo '# Debian
 deb http://ftp.fr.debian.org/debian jessie main contrib non-free
@@ -20,11 +20,14 @@ apt update
 
 # Install some useful applications
 apt purge -y vim-tiny netcat-traditional
-apt install -y tree htop vim mtr-tiny netcat-openbsd \
-netstat-nat iperf ipcalc deborphan minicom ndisc6 iftop tcpdump iotop \
-iptraf bmon
+apt install -y tree vim deborphan minicom mtr-tiny tcpdump ndisc6 \
+netcat-openbsd netstat-nat iperf ipcalc iptraf htop iftop iotop bmon
 
-# Configure bash global configuration file
+# Remove persistent network interface in udev
+rm -fv /etc/udev/rules.d/70-persistent-net.rules
+: > /etc/udev/rules.d/75-persistent-net-generator.rules
+
+# Configure Bash global configuration file
 cp -afv /etc/bash.bashrc /etc/bash.bashrc.$(date "+%Y%m%d")
 cp -fv bash.bashrc /etc/bash.bashrc
 
@@ -32,11 +35,11 @@ cp -fv bash.bashrc /etc/bash.bashrc
 cp -afv /root/.bashrc /root/.bashrc.$(date "+%Y%m%d")
 cp -fv .bashrc /root/.bashrc
 cp -fv .bashrc /etc/skel/.bashrc
-for u in $(ls /home); do
-	if [ "$u" = 'lost+found' ]; then continue; fi
-	cp -afv /home/$u/.bashrc /home/$u/.bashrc.$(date "+%Y%m%d")
-	cp -fv .bashrc /home/$u/.bashrc
-	chown $u:$u /home/$u/.bashrc
+for i in $(ls /home); do
+	if [ "$i" = 'lost+found' ]; then continue; fi
+	cp -afv /home/$i/.bashrc /home/$i/.bashrc.$(date "+%Y%m%d")
+	cp -fv .bashrc /home/$i/.bashrc
+	chown $i:$i /home/$i/.bashrc
 done
 
 # Enable conf file syntax highlighting in Nano
@@ -49,3 +52,8 @@ include "/usr/share/nano/conf.nanorc"' >> /etc/nanorc
 # Enable syntax highlighting in Vim
 echo '" Enable syntax highlighting by default.
 syntax on' > /etc/vim/vimrc.local
+
+# Zero GRUB timeout
+#sed -i 's/GRUB_TIMEOUT=.*/GRUB_TIMEOUT=0/' /etc/default/grub
+#update-grub
+
