@@ -4,8 +4,21 @@
 # Install and configure useful console applications
 #
 
-# Install some useful applications
+# Setup apt sources to use a french mirror
+cp -afv /etc/apt/sources.list /etc/apt/sources.list.$(date "+%Y%m%d")
+echo '# Debian
+deb http://ftp.fr.debian.org/debian jessie main contrib non-free
+# Updates
+deb http://ftp.fr.debian.org/debian jessie-updates main contrib non-free
+# Backports
+deb http://ftp.fr.debian.org/debian jessie-backports main contrib non-free
+# Security
+deb http://security.debian.org jessie/updates main contrib non-free' > /etc/apt/sources.list
+
+# Update the package database
 apt update
+
+# Install some useful applications
 apt purge -y vim-tiny netcat-traditional
 apt install -y tree htop vim mtr-tiny netcat-openbsd \
 netstat-nat iperf ipcalc deborphan minicom ndisc6 iftop tcpdump iotop \
