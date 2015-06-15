@@ -2,8 +2,10 @@
 
 #
 # Remove unnecessary applications in Gnome
+# and install some useful applications
 #
 
+# Remove unwanted applications
 apt purge evolution empathy cheese gnome-maps gnome-mahjongg gnome-games \
 gnome-sudoku gnome-tetravex gnome-chess gnome-dictionary gnome-orca polari \
 transmission-common simple-scan rhythmbox rhythmbox-data gnome-clocks \
@@ -21,3 +23,7 @@ aptitude update
 
 # Remove orphan packages
 deborphan | sudo xargs apt purge -y
+
+# Install useful applications
+apt install -y --force-yes gip wireshark putty ttf-mscorefonts-installer \
+flashplugin-nonfree geany gparted vlc virtualbox chromium chromium-l10n
