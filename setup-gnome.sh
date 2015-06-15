@@ -70,3 +70,18 @@ button-power "shutdown"
 #[org.gnome.desktop.lockdown]
 #disable-lock-screen true' > /usr/share/glib-2.0/schemas/20_desktop-base.gschema.override
 glib-compile-schemas /usr/share/glib-2.0/schemas
+
+
+# Configure PuTTY default settings
+mkdir -p /etc/skel/.putty/sessions
+echo 'ScrollbackLines=20000
+TermWidth=120
+TermHeight=35
+FontName=client:Monospace 12
+Colour0=0,0,0
+Colour1=85,85,85
+Colour2=255,255,255
+Colour3=187,187,187
+Colour4=0,0,0
+Colour5=0,0,0' > /etc/skel/.putty/sessions/putty.conf
+
