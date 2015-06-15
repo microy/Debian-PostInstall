@@ -54,6 +54,8 @@ echo '" Enable syntax highlighting by default.
 syntax on' > /etc/vim/vimrc.local
 
 # Zero GRUB timeout
-#sed -i 's/GRUB_TIMEOUT=.*/GRUB_TIMEOUT=0/' /etc/default/grub
-#update-grub
+if [ "$1" = "-zerogrub" ]; then
+	sed -i 's/GRUB_TIMEOUT=.*/GRUB_TIMEOUT=0/' /etc/default/grub
+	update-grub
+fi
 
