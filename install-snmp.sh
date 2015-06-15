@@ -5,8 +5,8 @@
 #
 
 # Install SNMP packages
-apt-get update
-apt-get install -y --force-yes snmp snmpd snmp-mibs-downloader
+apt update
+apt install -y snmp snmpd snmp-mibs-downloader
 
 # Configure SNMP service
 sed -i 's:export MIBS=:export MIBS=/usr/share/mibs:' /etc/default/snmpd

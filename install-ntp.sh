@@ -5,8 +5,8 @@
 #
 
 # Install NTP packages
-apt-get update
-apt-get install -y --force-yes ntp
+apt update
+apt install -y ntp
 
 # Configure NTP servers for France
 sed -i 's/.debian./.fr./' /etc/ntp.conf

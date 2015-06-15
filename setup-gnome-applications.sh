@@ -25,5 +25,5 @@ aptitude update
 deborphan | sudo xargs apt purge -y
 
 # Install useful applications
-apt install -y --force-yes gip wireshark putty ttf-mscorefonts-installer \
+apt install -y gip wireshark putty ttf-mscorefonts-installer \
 flashplugin-nonfree geany gparted vlc virtualbox chromium chromium-l10n

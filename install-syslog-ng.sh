@@ -5,8 +5,8 @@
 #
 
 # Install packages
-apt-get update
-apt-get install -y --force-yes syslog-ng
+apt update
+apt install -y syslog-ng
 
 # Configure service for external sources
 echo '# External sources
