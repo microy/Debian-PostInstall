@@ -14,7 +14,10 @@ iagno quadrapassel hitori swell-foop tali xboard lightsoff gnome-packagekit-data
 gnome-font-viewer gnome-logs gnome-disk-utility gnome-shell-extension-weather \
 bijiben tracker reportbug gnome-nettool yelp baobab gnome-system-log seahorse \
 gnome-online-miners gnome-accessibility-themes alacarte dconf-editor avahi-daemon \
-rygel 
+librygel-core-2.4-2
 
 # Fix meta-package dependencies
 aptitude update
+
+# Remove orphan packages
+deborphan | sudo xargs apt purge -y
