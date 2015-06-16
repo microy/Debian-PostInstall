@@ -2,9 +2,6 @@
 show-desktop-icons=true
 picture-uri='file:///usr/share/images/desktop-base/joy.xml'
 
-[org.gnome.desktop.input-sources]
-sources=[('xkb', 'fr+latin9')]
-
 [org.gnome.desktop.interface]
 clock-show-date=true
 
