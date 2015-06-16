@@ -20,7 +20,7 @@ apt update
 
 # Install some useful applications
 apt purge -y vim-tiny netcat-traditional
-apt install -y tree vim deborphan minicom mtr-tiny tcpdump ndisc6 \
+apt install -y tree vim unzip deborphan minicom mtr-tiny tcpdump ndisc6 \
 netcat-openbsd netstat-nat iperf ipcalc iptraf htop iftop iotop bmon
 
 # Remove persistent network interface in udev
