@@ -15,7 +15,7 @@ cp -fv /etc/issue /etc/issue.net
 : > /etc/motd
 
 # Setup apt sources to use our local mirror
-if [ "$1" = "-apt" ]; then
+if whiptail --title "APT setup" --yesno "Use local mirror server ?" --defaultno 10 50; then
 	cp -afv /etc/apt/sources.list /etc/apt/sources.list.$(date "+%Y%m%d")
 	echo '# Debian
 	deb http://10.129.44.50/debian jessie main contrib non-free
