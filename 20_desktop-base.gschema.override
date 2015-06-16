@@ -1,26 +1,26 @@
 [org.gnome.desktop.background]
-show-desktop-icons true
-picture-uri file:///usr/share/images/desktop-base/joy.xml
+show-desktop-icons=true
+picture-uri='file:///usr/share/images/desktop-base/joy.xml'
 
 [org.gnome.desktop.input-sources]
-[('xkb', 'fr+latin9')]
+sources=[('xkb', 'fr+latin9')]
 
 [org.gnome.desktop.interface]
-clock-show-date true
+clock-show-date=true
 
 [org.gnome.desktop.screensaver]
-lock-enabled false
-picture-uri file:///usr/share/images/desktop-base/joy.xml
+lock-enabled=false
+picture-uri='file:///usr/share/images/desktop-base/joy.xml'
 
 [org.gnome.desktop.sound]
-event-sounds false
+event-sounds=false
 
 [org.gnome.settings-daemon.plugins.power]
-button-power "shutdown"
+button-power="shutdown"
 
 [org.gnome.shell]
-enabled-extensions "['apps-menu@gnome-shell-extensions.gcampax.github.com', 'places-menu@gnome-shell-extensions.gcampax.github.com', 'drive-menu@gnome-shell-extensions.gcampax.github.com']"
-favorite-apps "['org.gnome.Nautilus.desktop', 'gnome-terminal.desktop', 'putty.desktop', 'geany.desktop', 'libreoffice-startcenter.desktop', 'iceweasel.desktop', 'chromium.desktop', 'wireshark.desktop', 'virtualbox.desktop', 'packettracer.desktop']"
+enabled-extensions=['apps-menu@gnome-shell-extensions.gcampax.github.com', 'places-menu@gnome-shell-extensions.gcampax.github.com', 'drive-menu@gnome-shell-extensions.gcampax.github.com']
+favorite-apps=['org.gnome.Nautilus.desktop', 'gnome-terminal.desktop', 'putty.desktop', 'geany.desktop', 'libreoffice-startcenter.desktop', 'iceweasel.desktop', 'chromium.desktop', 'wireshark.desktop', 'virtualbox.desktop', 'packettracer.desktop']
 
 [org.gnome.shell.calendar]
-show-weekdate true
+show-weekdate=true
