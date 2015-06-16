@@ -16,8 +16,8 @@ gnome-klotski gnome-robots gnome-nibbles aisleriot five-or-more four-in-a-row \
 iagno quadrapassel hitori swell-foop tali xboard lightsoff gnome-packagekit-data \
 gnome-font-viewer gnome-logs gnome-disk-utility gnome-shell-extension-weather \
 bijiben tracker reportbug gnome-nettool yelp baobab gnome-system-log seahorse \
-gnome-online-miners gnome-accessibility-themes alacarte dconf-editor avahi-daemon \
-librygel-core-2.4-2
+gnome-online-miners gnome-accessibility-themes dconf-editor avahi-daemon \
+librygel-core-2.4-2 gnome-color-manager gnome-online-accounts caribou
 
 # Fix meta-package dependencies
 aptitude update
@@ -39,5 +39,10 @@ glib-compile-schemas /usr/share/glib-2.0/schemas
 
 # Configure PuTTY default settings
 mkdir -p /etc/skel/.putty/sessions
-cp -fv putty.conf /etc/skel/.putty/sessions/
+cp -fv putty.conf /etc/skel/.putty/sessions/Default%20Settings
+for i in $(ls /home); do
+	if [ "$i" = 'lost+found' ]; then continue; fi
+	cp -Rfv /etc/skel/.putty /home/$i/
+	chown -R $i:$i /home/$i/.putty
+done
 
