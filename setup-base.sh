@@ -47,7 +47,7 @@ sed -i 's/^"syntax on/syntax on/' /etc/vim/vimrc
 
 # Install VirtualBox guest additions
 if whiptail --title "VirtualBox setup" --yesno "Install VirtualBox guest additions ?" --defaultno 10 50; then
-	apt install --no-install-recommends virtualbox-guest-dkms linux-headers-amd64
+	apt install -y --no-install-recommends virtualbox-guest-dkms linux-headers-amd64
 fi
 
 # Zero GRUB timeout
