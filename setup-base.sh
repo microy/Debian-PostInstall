@@ -20,7 +20,8 @@ apt update
 # Install some useful applications
 apt purge -y vim-tiny netcat-traditional
 apt install -y tree vim unzip deborphan git minicom mtr-tiny tcpdump ndisc6 \
-netcat-openbsd netstat-nat iperf ipcalc iptraf htop iftop iotop bmon nmap
+netcat-openbsd netstat-nat iperf ipcalc iptraf htop iftop iotop bmon nmap \
+openssh-server
 
 # Remove persistent network interface in udev
 rm -fv /etc/udev/rules.d/70-persistent-net.rules
