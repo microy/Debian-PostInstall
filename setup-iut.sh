@@ -5,9 +5,6 @@
 #
 
 # Configure system banner
-cp -afv /etc/issue /etc/issue.$(date "+%Y%m%d")
-cp -afv /etc/issue.net /etc/issue.net.$(date "+%Y%m%d")
-cp -afv /etc/motd /etc/motd.$(date "+%Y%m%d")
 echo 'IUT Réseaux et Télécoms Auxerre
 Debian GNU/Linux 8 \\n \\l
 ' > /etc/issue
@@ -16,7 +13,6 @@ cp -fv /etc/issue /etc/issue.net
 
 # Setup apt sources to use our local mirror
 if whiptail --title "APT setup" --yesno "Use local mirror server ?" --defaultno 10 50; then
-	cp -afv /etc/apt/sources.list /etc/apt/sources.list.$(date "+%Y%m%d")
 	echo '# Debian
 	deb http://10.129.44.50/debian jessie main contrib non-free
 	# Updates
