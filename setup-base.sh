@@ -30,11 +30,16 @@ rm -fv /etc/udev/rules.d/70-persistent-net.rules
 cp -fv bash.bashrc /etc/bash.bashrc
 
 # Configure local bashrc files
-cp -fv .bashrc /root/.bashrc
-cp -fv .bashrc /etc/skel/.bashrc
+echo '# ~/.bashrc: executed by bash(1) for non-login shells.
+
+# If not running interactively, don\'t do anything
+[ -z "$PS1" ] && return
+
+# Put your own configuration here.' > /root/.bashrc
+cp -fv /root/.bashrc /etc/skel/.bashrc
 for i in $(ls /home); do
 	if [ "$i" = 'lost+found' ]; then continue; fi
-	cp -fv .bashrc /home/$i/.bashrc
+	cp -fv /root/.bashrc /home/$i/.bashrc
 	chown $i:$i /home/$i/.bashrc
 done
 
