@@ -45,6 +45,11 @@ include "/usr/share/nano/conf.nanorc"' >> /etc/nanorc
 # Enable syntax highlighting in Vim
 sed -i 's/^"syntax on/syntax on/' /etc/vim/vimrc
 
+# Install VirtualBox guest additions
+if whiptail --title "VirtualBox setup" --yesno "Install VirtualBox guest additions ?" --defaultno 10 50; then
+	apt install --no-install-recommends virtualbox-guest-dkms linux-headers-amd64
+fi
+
 # Zero GRUB timeout
 if whiptail --title "GRUB setup" --yesno "Zero GRUB timeout ?" --defaultno 10 50; then
 	sed -i 's/GRUB_TIMEOUT=.*/GRUB_TIMEOUT=0/' /etc/default/grub
