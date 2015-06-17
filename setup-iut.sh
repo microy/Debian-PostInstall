@@ -4,12 +4,18 @@
 # Configure the system banner, and apt sources
 #
 
-# Configure system banner
+# Configure system banners
 echo 'IUT Réseaux et Télécoms Auxerre
 Debian GNU/Linux 8 \\n \\l
 ' > /etc/issue
-cp -fv /etc/issue /etc/issue.net
+echo '
+IUT Reseaux et Telecoms Auxerre
+Debian GNU/Linux 8
+' > /etc/issue.net
 : > /etc/motd
+
+# Configure SSH server banner
+sed -i 's/^#Banner/Banner/' /etc/sshd_config
 
 # Setup apt sources to use our local mirror
 if whiptail --title "APT setup" --yesno "Use local mirror server ?" --defaultno 10 50; then
