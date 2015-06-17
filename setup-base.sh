@@ -29,18 +29,11 @@ rm -fv /etc/udev/rules.d/70-persistent-net.rules
 # Configure global bashrc file
 cp -fv bash.bashrc /etc/bash.bashrc
 
-# Configure local bashrc files
-echo '# ~/.bashrc: executed by bash(1) for non-login shells.
-
-# If not running interactively, don\'t do anything
-[ -z "$PS1" ] && return
-
-# Put your own configuration here.' > /root/.bashrc
-cp -fv /root/.bashrc /etc/skel/.bashrc
+# Remove local bashrc files
+rm -fv /root/.bashrc
+rm -fv /etc/skel/.bashrc
 for USER in $(ls /home); do
-	if [ "$USER" = 'lost+found' ]; then continue; fi
-	cp -fv /root/.bashrc /home/$USER/.bashrc
-	chown $USER:$USER /home/$USER/.bashrc
+	rm -fv /home/$USER/.bashrc
 done
 
 # Enable conf file syntax highlighting in Nano
