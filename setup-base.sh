@@ -37,10 +37,10 @@ echo '# ~/.bashrc: executed by bash(1) for non-login shells.
 
 # Put your own configuration here.' > /root/.bashrc
 cp -fv /root/.bashrc /etc/skel/.bashrc
-for i in $(ls /home); do
-	if [ "$i" = 'lost+found' ]; then continue; fi
-	cp -fv /root/.bashrc /home/$i/.bashrc
-	chown $i:$i /home/$i/.bashrc
+for USER in $(ls /home); do
+	if [ "$USER" = 'lost+found' ]; then continue; fi
+	cp -fv /root/.bashrc /home/$USER/.bashrc
+	chown $USER:$USER /home/$USER/.bashrc
 done
 
 # Enable conf file syntax highlighting in Nano
