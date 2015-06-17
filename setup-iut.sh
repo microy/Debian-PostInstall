@@ -15,7 +15,7 @@ Debian GNU/Linux 8
 : > /etc/motd
 
 # Configure SSH server banner
-sed -i 's/^#Banner/Banner/' /etc/sshd_config
+sed -i 's/^#Banner/Banner/' /etc/ssh/sshd_config
 
 # Setup apt sources to use our local mirror
 if whiptail --title "APT setup" --yesno "Use local mirror server ?" --defaultno 10 50; then
