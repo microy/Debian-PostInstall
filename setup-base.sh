@@ -50,8 +50,7 @@ echo '
 include "/usr/share/nano/conf.nanorc"' >> /etc/nanorc
 
 # Enable syntax highlighting in Vim
-echo '" Enable syntax highlighting by default.
-syntax on' > /etc/vim/vimrc.local
+sed -i 's/^"syntax on/syntax on/' /etc/vim/vimrc
 
 # Zero GRUB timeout
 if whiptail --title "GRUB setup" --yesno "Zero GRUB timeout ?" --defaultno 10 50; then
