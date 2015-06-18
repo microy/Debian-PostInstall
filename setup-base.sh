@@ -46,6 +46,13 @@ include "/usr/share/nano/conf.nanorc"' >> /etc/nanorc
 # Enable syntax highlighting in Vim
 sed -i 's/^"syntax on/syntax on/' /etc/vim/vimrc
 
+# Setup minicom
+echo 'pu port             /dev/ttyS0
+pu baudrate         9600
+pu bits             8
+pu parity           N
+pu stopbits         1' > /etc/minicom/minirc.dfl
+
 # Install VirtualBox guest additions
 if whiptail --title "VirtualBox setup" --yesno "Install VirtualBox guest additions ?" --defaultno 10 50; then
 	apt install -y --no-install-recommends virtualbox-guest-dkms linux-headers-amd64
