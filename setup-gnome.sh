@@ -30,19 +30,19 @@ apt install -y gip wireshark putty ttf-mscorefonts-installer flashplugin-nonfree
 geany gparted vlc virtualbox chromium chromium-l10n
 
 # Add desktop file with mime info for Cisco Packet Tracer
-cp packettracer.desktop /usr/share/applications/
+cp config/packettracer.desktop /usr/share/applications/
 update-desktop-database
 
 # Setup Gnome Shell
-cp -fv 20_desktop-base.gschema.override /usr/share/glib-2.0/schemas/
+cp -fv config/20_desktop-base.gschema.override /usr/share/glib-2.0/schemas/
 glib-compile-schemas /usr/share/glib-2.0/schemas
 
 # Configure PuTTY default settings
 mkdir -p /etc/skel/.putty/sessions
-cp -fv putty.conf /etc/skel/.putty/sessions/Default%20Settings
-for i in $(ls /home); do
-	if [ "$i" = 'lost+found' ]; then continue; fi
-	cp -Rfv /etc/skel/.putty /home/$i/
-	chown -R $i:$i /home/$i/.putty
+cp -fv config/putty.conf /etc/skel/.putty/sessions/Default%20Settings
+for USER in $(ls /home); do
+	if [ "$USER" = 'lost+found' ]; then continue; fi
+	cp -Rfv /etc/skel/.putty /home/$USER/
+	chown -R $USER:$USER /home/$USER/.putty
 done
 

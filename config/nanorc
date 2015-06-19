@@ -1,0 +1,3 @@
+
+## Configuration files (catch-all syntax)
+include "/usr/share/nano/conf.nanorc"

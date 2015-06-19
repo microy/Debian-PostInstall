@@ -1,0 +1,12 @@
+#! /bin/sh
+
+#
+# Script to stop a local proxy with CNTLM
+#
+
+# Stop CNTLM service
+killall cntlm
+
+# Remove proxy configuration
+export http_proxy=
+export https_proxy=

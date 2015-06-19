@@ -5,14 +5,7 @@
 #
 
 # Setup apt sources in France
-echo '# Debian
-deb http://ftp.fr.debian.org/debian jessie main contrib non-free
-# Updates
-deb http://ftp.fr.debian.org/debian jessie-updates main contrib non-free
-# Backports
-deb http://ftp.fr.debian.org/debian jessie-backports main contrib non-free
-# Security
-deb http://security.debian.org jessie/updates main contrib non-free' > /etc/apt/sources.list
+cp -fv config/sources.list.france /etc/apt/sources.list
 
 # Update the package database
 apt update
@@ -28,30 +21,25 @@ rm -fv /etc/udev/rules.d/70-persistent-net.rules
 : > /etc/udev/rules.d/75-persistent-net-generator.rules
 
 # Configure global bashrc file
-cp -fv bash.bashrc /etc/bash.bashrc
+cp -fv config/bash.bashrc /etc/bash.bashrc
 
 # Remove local bashrc files
 rm -fv /root/.bashrc
 rm -fv /etc/skel/.bashrc
 for USER in $(ls /home); do
+	if [ "$USER" = 'lost+found' ]; then continue; fi
 	rm -fv /home/$USER/.bashrc
 done
 
 # Enable conf file syntax highlighting in Nano
-cp -fv conf.nanorc /usr/share/nano/conf.nanorc
-echo '
-## Configuration files (catch-all syntax)
-include "/usr/share/nano/conf.nanorc"' >> /etc/nanorc
+cp -fv config/conf.nanorc /usr/share/nano/conf.nanorc
+cat config/nanorc >> /etc/nanorc
 
 # Enable syntax highlighting in Vim
 sed -i 's/^"syntax on/syntax on/' /etc/vim/vimrc
 
 # Setup minicom
-echo 'pu port             /dev/ttyS0
-pu baudrate         9600
-pu bits             8
-pu parity           N
-pu stopbits         1' > /etc/minicom/minirc.dfl
+cp -fv config/minicom.conf /etc/minicom/minirc.dfl
 
 # Install VirtualBox guest additions
 if whiptail --title "VirtualBox setup" --yesno "Install VirtualBox guest additions ?" --defaultno 10 50; then
