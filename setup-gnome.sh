@@ -34,7 +34,7 @@ cp config/packettracer.desktop /usr/share/applications/
 update-desktop-database
 
 # Setup Gnome Shell
-cp -fv config/20_desktop-base.gschema.override /usr/share/glib-2.0/schemas/
+cp -fv config/gnome.conf /usr/share/glib-2.0/schemas/20_desktop-base.gschema.override
 glib-compile-schemas /usr/share/glib-2.0/schemas
 
 # Configure PuTTY default settings
