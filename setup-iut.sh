@@ -21,7 +21,6 @@ fi
 # Setup CNTLM for authentication with our local proxy server
 if whiptail --title "CNTLM setup" --yesno "Use local proxy server ?" --defaultno 10 50; then
 	# Install CNTLM package
-	apt update
 	apt install -y cntlm
 	# Disable CNTLM service
 	systemctl stop cntlm
