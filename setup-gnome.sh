@@ -17,13 +17,14 @@ iagno quadrapassel hitori swell-foop tali xboard lightsoff gnome-packagekit-data
 gnome-font-viewer gnome-logs gnome-disk-utility gnome-shell-extension-weather \
 bijiben tracker reportbug gnome-nettool yelp baobab gnome-system-log seahorse \
 gnome-online-miners gnome-accessibility-themes dconf-editor avahi-daemon \
-librygel-core-2.4-2 gnome-color-manager gnome-online-accounts caribou
+gnome-color-manager gnome-online-accounts caribou
+
+# Remove orphan packages (twice)
+deborphan | sudo xargs apt purge -y
+deborphan | sudo xargs apt purge -y
 
 # Fix meta-package dependencies
 aptitude update
-
-# Remove orphan packages
-deborphan | sudo xargs apt purge -y
 
 # Install useful applications
 apt install -y gip wireshark putty ttf-mscorefonts-installer flashplugin-nonfree \
