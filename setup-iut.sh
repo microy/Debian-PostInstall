@@ -7,7 +7,7 @@
 # Configure system banners
 cp -fv config/issue /etc/issue
 cp -fv config/issue.net /etc/issue.net
-: > /etc/motd
+rm -fv /etc/motd
 
 # Configure SSH server banner
 sed -i 's/^#Banner/Banner/' /etc/ssh/sshd_config
