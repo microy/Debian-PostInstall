@@ -18,6 +18,17 @@ if whiptail --title "APT setup" --yesno "Use local mirror server ?" --defaultno 
 	apt update
 fi
 
+# Setup NTP client to use our local time server
+if whiptail --title "NTP setup" --yesno "Use local time server ?" --defaultno 10 50; then
+	# Install NTP package
+	apt install -y ntp
+	# Configure NTP server
+	sed -i 's/^server/#server/' /etc/ntp.conf
+	cat 'server 192.168.5.5' >> /etc/ntp.conf
+	# Restart NTP service
+	systemctl restart ntp
+fi
+
 # Setup CNTLM for authentication with our local proxy server
 if whiptail --title "CNTLM setup" --yesno "Use local proxy server ?" --defaultno 10 50; then
 	# Install CNTLM package
