@@ -12,7 +12,7 @@ install_ntp()
 
 	# Configure NTP servers for France
 	sed -i 's/^server/#server/' /etc/ntp.conf
-	cat config/ntp.conf >> /etc/ntp.conf
+	cat config/ntp.conf.france >> /etc/ntp.conf
 
 	# Restart NTP service
 	systemctl restart ntp
