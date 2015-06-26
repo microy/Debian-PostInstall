@@ -24,7 +24,7 @@ if whiptail --title "NTP setup" --yesno "Use local time server ?" --defaultno 10
 	apt install -y ntp
 	# Configure NTP server
 	sed -i 's/^server/#server/' /etc/ntp.conf
-	cat 'server 192.168.5.5' >> /etc/ntp.conf
+	cat config/ntp.conf.iut >> /etc/ntp.conf
 	# Restart NTP service
 	systemctl restart ntp
 fi
