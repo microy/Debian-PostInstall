@@ -34,6 +34,12 @@ geany gparted vlc virtualbox chromium chromium-l10n
 cp config/packettracer.desktop /usr/share/applications/
 update-desktop-database
 
+# Setup default background
+update-alternatives --set desktop-grub /usr/share/images/desktop-base/joy-grub.png
+update-alternatives --set desktop-background.xml /usr/share/images/desktop-base/joy.xml
+update-alternatives --set desktop-background /usr/share/images/desktop-base/joy-wallpaper_1920x1200.svg
+dpkg-reconfigure desktop-base
+
 # Setup Gnome Shell
 cp -fv config/gnome.conf /usr/share/glib-2.0/schemas/20_desktop-base.gschema.override
 glib-compile-schemas /usr/share/glib-2.0/schemas
