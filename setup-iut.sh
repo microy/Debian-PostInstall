@@ -14,7 +14,9 @@ sed -i 's/^#Banner/Banner/' /etc/ssh/sshd_config
 
 # Setup apt sources to use our local mirror
 if whiptail --title "APT setup" --yesno "Use local mirror server ?" --defaultno 10 50; then
+	# Configure APT sources
 	cp -fv config/sources.list.iut /etc/apt/sources.list
+	# Update package database
 	apt update
 fi
 
@@ -42,7 +44,6 @@ if whiptail --title "CNTLM setup" --yesno "Use local proxy server ?" --defaultno
 	sed -i 's/^Password/#Password/' /etc/cntlm.conf
 	sed -i 's/^Proxy/#Proxy/' /etc/cntlm.conf
 	cat config/cntlm.conf >> /etc/cntlm.conf
-	# Copy the scripts to start and stop the local proxy
-	cp -fv config/proxy-start /usr/local/bin/
-	cp -fv config/proxy-stop /usr/local/bin/
+	# Copy the functions to start and stop the local proxy in bashrc
+	cat config/proxy.sh >> /etc/bash.bashrc
 fi
