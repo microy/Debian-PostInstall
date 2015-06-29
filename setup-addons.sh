@@ -23,11 +23,12 @@ install_snmp()
 	# Install SNMP packages
 	apt install -y snmp snmpd snmp-mibs-downloader
 
-	# Configure SNMP service
+	# Load MIBs by default
 	sed -i 's:export MIBS=:export MIBS=/usr/share/mibs:' /etc/default/snmpd
-	sed -i 's/^agentAddress/#agentAddress/' /etc/snmp/snmpd.conf
-	sed -i 's/^ rocommunity/#rocommunity/' /etc/snmp/snmpd.conf
-	cat config/snmpd.conf >> /etc/snmp/snmpd.conf
+	sed -i 's/:mibs/#:mibs/' /etc/snmp/snmp.conf
+	
+	# SNMP server configuration
+	cp -fv config/snmpd.conf /etc/snmp/snmpd.conf
 
 	# Restart SNMP service
 	systemctl restart snmpd
