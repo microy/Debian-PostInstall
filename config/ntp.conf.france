@@ -1,3 +1,7 @@
+#
+# NTP Client/Server Configuration
+#
+
 # Default NTP parameters
 driftfile /var/lib/ntp/ntp.drift
 statistics loopstats peerstats clockstats
