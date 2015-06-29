@@ -28,7 +28,7 @@ deborphan | sudo xargs apt purge -y
 aptitude update
 
 # Install useful applications
-apt install -y gip wireshark putty ttf-mscorefonts-installer flashplugin-nonfree \
+apt install -y gip wireshark ttf-mscorefonts-installer flashplugin-nonfree \
 geany gparted vlc virtualbox chromium chromium-l10n
 
 # Add desktop file with mime info for Cisco Packet Tracer
@@ -44,13 +44,3 @@ dpkg-reconfigure desktop-base
 # Setup Gnome Shell
 cp -fv config/gnome.conf /usr/share/glib-2.0/schemas/20_desktop-base.gschema.override
 glib-compile-schemas /usr/share/glib-2.0/schemas
-
-# Configure PuTTY default settings
-mkdir -p /etc/skel/.putty/sessions
-cp -fv config/putty.conf /etc/skel/.putty/sessions/Default%20Settings
-for USER in $(ls /home); do
-	if [ "$USER" = 'lost+found' ]; then continue; fi
-	cp -Rfv /etc/skel/.putty /home/$USER/
-	chown -R $USER:$USER /home/$USER/.putty
-done
-
