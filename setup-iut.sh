@@ -38,11 +38,7 @@ if whiptail --title "CNTLM setup" --yesno "Use local proxy server ?" --defaultno
 	systemctl stop cntlm
 	systemctl disable cntlm
 	# Configure CNTLM
-	sed -i 's/^Username/#Username/' /etc/cntlm.conf
-	sed -i 's/^Domain/#Domain/' /etc/cntlm.conf
-	sed -i 's/^Password/#Password/' /etc/cntlm.conf
-	sed -i 's/^Proxy/#Proxy/' /etc/cntlm.conf
-	cat config/cntlm.conf >> /etc/cntlm.conf
+	cp -fv config/cntlm.conf /etc/cntlm.conf
 	# Copy the functions to start and stop the local proxy in bashrc
 	cat config/proxy.sh >> /etc/bash.bashrc
 fi
