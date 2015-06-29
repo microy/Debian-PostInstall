@@ -10,9 +10,8 @@ install_ntp()
 	# Install NTP packages
 	apt install -y ntp
 
-	# Configure NTP servers for France
-	sed -i 's/^server/#server/' /etc/ntp.conf
-	cat config/ntp.conf.france >> /etc/ntp.conf
+	# Configure NTP servers in France
+	cp -fv config/ntp.conf.france /etc/ntp.conf
 
 	# Restart NTP service
 	systemctl restart ntp
