@@ -31,12 +31,12 @@ for USER in $(ls /home); do
 	rm -fv /home/$USER/.bashrc
 done
 
-# Enable conf file syntax highlighting in Nano
+# Setup Nano
 cp -fv config/conf.nanorc /usr/share/nano/conf.nanorc
-cat config/nanorc >> /etc/nanorc
+cp -fv config/nanorc /etc/nanorc
 
-# Enable syntax highlighting in Vim
-sed -i 's/^"syntax on/syntax on/' /etc/vim/vimrc
+# Setup Vim
+cp -fv config/vimrc /etc/vim/vimrc
 
 # Setup minicom
 cp -fv config/minicom.conf /etc/minicom/minirc.dfl
