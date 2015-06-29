@@ -17,9 +17,10 @@ iagno quadrapassel hitori swell-foop tali xboard lightsoff gnome-packagekit-data
 gnome-font-viewer gnome-logs gnome-disk-utility gnome-shell-extension-weather \
 bijiben tracker reportbug gnome-nettool yelp baobab gnome-system-log seahorse \
 gnome-online-miners gnome-accessibility-themes dconf-editor avahi-daemon \
-gnome-color-manager gnome-online-accounts caribou rygel
+gnome-color-manager gnome-online-accounts caribou rygel zeitgeist-core
 
-# Remove orphan packages (twice)
+# Remove orphan packages (three times)
+deborphan | sudo xargs apt purge -y
 deborphan | sudo xargs apt purge -y
 deborphan | sudo xargs apt purge -y
 
