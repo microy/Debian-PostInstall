@@ -1,6 +1,9 @@
 ## Don't wrap text at all.
 set nowrap
 
+## Use smooth scrolling as the default.
+set smooth
+
 ## Nanorc files
 include "/usr/share/nano/nanorc.nanorc"
 
