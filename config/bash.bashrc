@@ -26,10 +26,10 @@ fi
 # Fancy prompt
 if [ "`id -u`" -eq 0 ]; then
   # Root account prompt (red)
-  PS1='${debian_chroot:+($debian_chroot)}\[\e[31m\]\u\[\e[m\]@\[\e[33m\]\h\[\e[m\]:\[\e[35m\]\w\[\e[m\]\$ '
+  PS1='${debian_chroot:+($debian_chroot)}\[\e[31m\]\u\[\e[m\]@\[\e[35m\]\h\[\e[m\]:\[\e[36m\]\w\[\e[m\]\$ '
 else
   # User account prompt (green)
-  PS1='${debian_chroot:+($debian_chroot)}\[\e[32m\]\u\[\e[m\]@\[\e[33m\]\h\[\e[m\]:\[\e[35m\]\w\[\e[m\]\$ '
+  PS1='${debian_chroot:+($debian_chroot)}\[\e[32m\]\u\[\e[m\]@\[\e[35m\]\h\[\e[m\]:\[\e[36m\]\w\[\e[m\]\$ '
 fi
 
 # If this is an xterm set the title to user@host:dir
