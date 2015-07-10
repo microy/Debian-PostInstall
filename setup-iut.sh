@@ -9,9 +9,6 @@ cp -fv config/issue /etc/issue
 cp -fv config/issue.net /etc/issue.net
 rm -fv /etc/motd
 
-# Configure SSH server banner
-sed -i 's/^#Banner/Banner/' /etc/ssh/sshd_config
-
 # Setup apt sources to use our local mirror
 if whiptail --title "APT setup" --yesno "Use local mirror server ?" --defaultno 10 50; then
 	# Configure APT sources
