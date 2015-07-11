@@ -29,7 +29,7 @@ aptitude update
 
 # Install useful applications
 apt install -y gip wireshark ttf-mscorefonts-installer flashplugin-nonfree \
-geany gparted vlc virtualbox chromium chromium-l10n
+geany gparted vlc virtualbox chromium chromium-l10n pepperflashplugin-nonfree
 
 # Add desktop file with mime info for Cisco Packet Tracer
 cp config/packettracer.desktop /usr/share/applications/
