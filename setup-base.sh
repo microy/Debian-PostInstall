@@ -58,6 +58,6 @@ fi
 # Disable UUID in GRUB
 if whiptail --title "GRUB setup" --yesno "Disable UUID ?" --defaultno 10 50; then
 	sed -i 's/#GRUB_DISABLE_LINUX_UUID=.*/GRUB_DISABLE_LINUX_UUID=true/' /etc/default/grub
-	echo 'Don\'t forget to update /etc/fstab...'
 	update-grub
+	echo "Don't forget to update /etc/fstab..."
 fi
