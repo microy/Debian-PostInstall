@@ -13,13 +13,13 @@ Post-installation scripts for Debian stable.
   - Remove persistent network interface in udev
   - Install VirtualBox guest additions (optionnal)
   - Zero Grub timeout (optionnal)
+  - Remove UUID in Grub (optionnal)
   
 ## Gnome
   
   - Remove unwanted applications
-  - Install useful applications (Wireshark, PuTTY, Chromium, Flash...)
-  - Setup Gnome Shell
-  - Configure PuTTY default settings
+  - Install useful applications (Wireshark, VirtualBox, Flash...)
+  - Setup Gnome Shell (background, extensions...)
   
 ## Addons
 
@@ -29,4 +29,5 @@ Post-installation scripts for Debian stable.
 
   - Configure system banners
   - Configure Apt to use our local mirror server (optionnal)
+  - Configure Ntp to use our local mirror server (optionnal)
   - Configure Cntlm to use our local proxy server (optionnal)
