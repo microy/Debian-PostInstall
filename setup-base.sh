@@ -20,6 +20,9 @@ openssh-server
 rm -fv /etc/udev/rules.d/70-persistent-net.rules
 : > /etc/udev/rules.d/75-persistent-net-generator.rules
 
+# Activate 'numlock'
+sed -i 's/#LEDS=+num/LEDS=+num/' /etc/kbd/config
+
 # Configure Bash
 cp -fv config/bash.bashrc /etc/bash.bashrc
 rm -fv /etc/skel/.bashrc
