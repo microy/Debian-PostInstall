@@ -29,10 +29,10 @@ aptitude update
 
 # Install useful applications
 apt install -y gip wireshark ttf-mscorefonts-installer flashplugin-nonfree \
-geany gparted vlc virtualbox
+geany gparted vlc virtualbox numlockx
 
-# Add desktop file with mime info for Cisco Packet Tracer
-cp config/packettracer.desktop /usr/share/applications/
+# Add desktop file with mime info for Packet Tracer, Firefox, and Thunderbird
+cp config/*.desktop /usr/share/applications/
 update-desktop-database
 
 # Disable bitmap fonts
