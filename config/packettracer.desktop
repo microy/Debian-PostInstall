@@ -1,9 +1,8 @@
 [Desktop Entry]
-Version=1.0
+Encoding=UTF-8
 Type=Application
-Name=Cisco Packet Tracer
+Name=Packet Tracer
 Comment=Network simulation tool
-GenericName=Cisco Packet Tracer
 Exec=/opt/pt/packettracer
 Icon=/opt/pt/art/app.png
 Categories=GNOME;GTK;Network;
