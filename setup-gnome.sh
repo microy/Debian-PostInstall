@@ -39,7 +39,6 @@ update-desktop-database
 ln -sf /usr/share/fontconfig/conf.avail/10-autohint.conf /etc/fonts/conf.d/
 ln -sf /usr/share/fontconfig/conf.avail/10-sub-pixel-rgb.conf /etc/fonts/conf.d/
 ln -sf /usr/share/fontconfig/conf.avail/70-no-bitmaps.conf /etc/fonts/conf.d/
-#cp -fv config/local.conf /etc/fonts/local.conf
 
 # Setup default background
 update-alternatives --set desktop-grub /usr/share/images/desktop-base/joy-grub.png
