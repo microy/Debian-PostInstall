@@ -1,14 +1,19 @@
 [Desktop Entry]
 Encoding=UTF-8
 Name=Firefox
+Name[fr]=Firefox
 Comment=Browse the World Wide Web
-Comment[fr]=Naviguer sur le Web
+Comment[fr]=Navigue sur Internet
 GenericName=Web Browser
 GenericName[fr]=Navigateur Web
+X-GNOME-FullName=Firefox Web Browser
+X-GNOME-FullName[fr]=Navigateur Web Firefox
 Exec=/opt/firefox/firefox %u
 Terminal=false
+X-MultipleArgs=false
 Type=Application
-Categories=Network;WebBrowser;
-MimeType=text/html;text/xml;application/xhtml+xml;application/vnd.mozilla.xul+xml;text/mml;x-scheme-handler/http;x-scheme-handler/https;x-scheme-handler/ftp;
-StartupNotify=true
 Icon=/opt/firefox/browser/icons/mozicon128.png
+Categories=Network;WebBrowser;
+MimeType=text/html;text/xml;application/xhtml+xml;application/xml;application/vnd.mozilla.xul+xml;application/rss+xml;application/rdf+xml;image/gif;image/jpeg;image/png;x-scheme-handler/http;x-scheme-handler/https;
+StartupWMClass=Firefox
+StartupNotify=true
