@@ -29,7 +29,7 @@ aptitude update
 
 # Install useful applications
 apt install -y gip wireshark ttf-mscorefonts-installer flashplugin-nonfree \
-geany gparted vlc virtualbox numlockx
+geany gparted vlc virtualbox numlockx firefox-esr firefox-esr-l10n-fr
 
 # Add desktop file with mime info for Packet Tracer, Firefox, and Thunderbird
 cp config/*.desktop /usr/share/applications/
