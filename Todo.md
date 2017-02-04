@@ -12,7 +12,7 @@
 
 - Update unwanted applications
 - Update useful applications
-- don't copy all desktop files
+- Don't copy all desktop files
 - Check font rendering
 - Update background
 - Update Gnome setup
