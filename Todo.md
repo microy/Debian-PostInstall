@@ -22,6 +22,7 @@
 - Update background
 - Update Gnome setup
 - Check Packet Tracer desktop file
+- Add Atom
 
 ## IUT
 
