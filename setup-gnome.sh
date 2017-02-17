@@ -50,6 +50,9 @@ dpkg-reconfigure desktop-base
 cp -fv config/gnome.conf /usr/share/glib-2.0/schemas/20_desktop-base.gschema.override
 glib-compile-schemas /usr/share/glib-2.0/schemas
 
-# Install Atom
+# Download and install Atom
 wget -O /tmp/atom.deb https://atom.io/download/deb
 dpkg -i /tmp/atom.deb
+
+# Add function to bashrc to update Atom
+cat config/update-atom.sh >> /etc/bash.bashrc
