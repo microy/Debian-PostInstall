@@ -49,3 +49,7 @@ dpkg-reconfigure desktop-base
 # Setup Gnome Shell
 cp -fv config/gnome.conf /usr/share/glib-2.0/schemas/20_desktop-base.gschema.override
 glib-compile-schemas /usr/share/glib-2.0/schemas
+
+# Install Atom
+wget -O /tmp/atom.deb https://atom.io/download/deb
+dpkg -i /tmp/atom.deb
