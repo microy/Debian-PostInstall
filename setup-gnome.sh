@@ -60,3 +60,6 @@ cat config/update-atom.sh >> /etc/bash.bashrc
 # Download and install Google Chrome
 wget -O /tmp/chrome.deb https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
 dpkg -i /tmp/chrome.deb
+
+# Add function to bashrc to update Google Chrome
+cat config/update-chrome.sh >> /etc/bash.bashrc
