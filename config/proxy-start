@@ -1,0 +1,16 @@
+#! /bin/sh
+
+#
+# Start proxy
+#
+
+# Read proxy username
+echo -n "Username: "
+read PROXY_USER
+
+# Start CNTLM service
+cntlm -I -u $PROXY_USER
+
+# Export proxy configuration
+export http_proxy=http://127.0.0.1:3128
+export https_proxy=http://127.0.0.1:3128
