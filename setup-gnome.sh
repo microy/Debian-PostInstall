@@ -51,15 +51,13 @@ cp -fv config/gnome.conf /usr/share/glib-2.0/schemas/20_desktop-base.gschema.ove
 glib-compile-schemas /usr/share/glib-2.0/schemas
 
 # Download and install Atom
-wget -O /tmp/atom.deb https://atom.io/download/deb
-dpkg -i /tmp/atom.deb
+./config/update-atom
 
-# Add function to bashrc to update Atom
-cat config/update-atom.sh >> /etc/bash.bashrc
+# Add script to update Atom
+cp config/update-atom /usr/local/bin/
 
 # Download and install Google Chrome
-wget -O /tmp/chrome.deb https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
-dpkg -i /tmp/chrome.deb
+./config/update-chrome
 
-# Add function to bashrc to update Google Chrome
-cat config/update-chrome.sh >> /etc/bash.bashrc
+# Add script to update Atom
+cp config/update-chrome /usr/local/bin/
