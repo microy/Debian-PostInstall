@@ -32,7 +32,7 @@ apt install -y gip wireshark ttf-mscorefonts-installer flashplugin-nonfree \
 geany gparted vlc virtualbox numlockx firefox-esr firefox-esr-l10n-fr
 
 # Add desktop file with mime info for Packet Tracer, Firefox, and Thunderbird
-cp config/*.desktop /usr/share/applications/
+cp -fv config/*.desktop /usr/share/applications/
 update-desktop-database
 
 # Configure font rendering
@@ -54,10 +54,10 @@ glib-compile-schemas /usr/share/glib-2.0/schemas
 ./config/update-atom
 
 # Add script to update Atom
-cp config/update-atom /usr/local/bin/
+cp -fv config/update-atom /usr/local/bin/
 
 # Download and install Google Chrome
 ./config/update-chrome
 
 # Add script to update Atom
-cp config/update-chrome /usr/local/bin/
+cp -fv config/update-chrome /usr/local/bin/
