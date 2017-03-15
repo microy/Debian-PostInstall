@@ -22,6 +22,11 @@
 - Update background
 - Update Gnome setup
 - Check Packet Tracer desktop file
+- Scripts to check Gnome configuration updates
+
+### Extensions
+
+- Dash to panel
 
 ## IUT
 
