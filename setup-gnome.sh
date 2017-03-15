@@ -54,10 +54,10 @@ glib-compile-schemas /usr/share/glib-2.0/schemas
 ./config/update-atom
 
 # Add script to update Atom
-cp -fv config/update-atom /usr/local/bin/
+cp -fv config/update-atom /usr/local/sbin/
 
 # Download and install Google Chrome
 ./config/update-chrome
 
 # Add script to update Atom
-cp -fv config/update-chrome /usr/local/bin/
+cp -fv config/update-chrome /usr/local/sbin/
