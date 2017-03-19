@@ -4,11 +4,7 @@
 # Base system configuration
 #
 
-# Get the date
-DATE=$(date "+%Y%m%d")
-
 # Setup apt sources in France
-cp -v /etc/apt/sources.list /etc/apt/sources.list.$DATE
 cp -fv config/sources.list.france /etc/apt/sources.list
 
 # Update the package database
@@ -21,15 +17,14 @@ apt purge -y vim-tiny
 apt install -y tree vim git minicom mtr-tiny tcpdump iperf nmap htop
 
 # Configure Bash
-cp -v /etc/bash.bashrc /etc/bash.bashrc.$DATE
 cp -fv config/bash.bashrc /etc/bash.bashrc
 rm -fv /etc/skel/.bashrc
 
 # Remove local bashrc files
-mv -fv /root/.bashrc /root/.bashrc.$DATE
+rm -fv /root/.bashrc
 for USER in $(ls /home); do
 	if [ "$USER" = 'lost+found' ]; then continue; fi
-	mv -fv /home/$USER/.bashrc /home/$USER/.bashrc.$DATE
+	rm -fv /home/$USER/.bashrc
 done
 
 # Configure Nano
