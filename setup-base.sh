@@ -50,7 +50,6 @@ if whiptail --title "VirtualBox setup" --yesno "Install VirtualBox guest additio
 fi
 
 # Zero GRUB timeout
-grub_updated=0
 if whiptail --title "GRUB setup" --yesno "Zero GRUB timeout ?" --defaultno 10 50; then
 	sed -i 's/GRUB_TIMEOUT=.*/GRUB_TIMEOUT=0/' /etc/default/grub
 	update-grub
