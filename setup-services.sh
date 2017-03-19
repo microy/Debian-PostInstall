@@ -26,7 +26,7 @@ install_snmp()
 	# Load MIBs by default
 	sed -i 's:export MIBS=:export MIBS=/usr/share/mibs:' /etc/default/snmpd
 	sed -i 's/:mibs/#:mibs/' /etc/snmp/snmp.conf
-	
+
 	# SNMP server configuration
 	cp -fv config/snmpd.conf /etc/snmp/snmpd.conf
 
@@ -48,14 +48,14 @@ install_syslogng()
 }
 
 # Choose what service to install
-ADDONS=$(whiptail --title "System addon setup" --separate-output --checklist \
+SERVICES=$(whiptail --title "System addon setup" --separate-output --checklist \
 "Choose additionnal services to install :" 20 78 4 \
 "NTP" "Time service" OFF \
 "SNMP" "Monitoring service" OFF \
 "SYSLOG-NG" "System logging service" OFF 3>&1 1>&2 2>&3)
 
 # Install selected services
-for SERVICE in $ADDONS; do
+for SERVICE in $SERVICES; do
 	case $SERVICE in
 		NTP) install_ntp
 		;;
