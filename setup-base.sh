@@ -16,9 +16,6 @@ apt purge -y vim-tiny
 # Install some useful applications
 apt install -y tree vim git minicom mtr-tiny tcpdump iperf nmap htop
 
-# Activate 'numlock'
-sed -i 's/#LEDS=+num/LEDS=+num/' /etc/kbd/config
-
 # Configure Bash
 cp -fv config/bash.bashrc /etc/bash.bashrc
 rm -fv /etc/skel/.bashrc
