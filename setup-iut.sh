@@ -9,6 +9,9 @@ cp -fv config/issue /etc/issue
 cp -fv config/issue.net /etc/issue.net
 rm -fv /etc/motd
 
+# Install some useful applications
+apt install -y ndisc6 netstat-nat ipcalc
+
 # Setup apt sources to use our local mirror
 if whiptail --title "APT setup" --yesno "Use local mirror server ?" --defaultno 10 50; then
 	# Configure APT sources

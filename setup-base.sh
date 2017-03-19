@@ -10,11 +10,11 @@ cp -fv config/sources.list.france /etc/apt/sources.list
 # Update the package database
 apt update
 
+# Purge unwanted applications
+apt purge -y vim-tiny
+
 # Install some useful applications
-apt purge -y vim-tiny netcat-traditional
-apt install -y tree vim unzip deborphan git minicom mtr-tiny tcpdump ndisc6 \
-netcat-openbsd netstat-nat iperf ipcalc iptraf htop iftop iotop bmon nmap \
-exfat-fuse
+apt install -y tree vim git minicom mtr-tiny tcpdump iperf nmap htop
 
 # Activate 'numlock'
 sed -i 's/#LEDS=+num/LEDS=+num/' /etc/kbd/config
