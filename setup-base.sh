@@ -8,7 +8,7 @@
 cp -fv config/sources.list.france /etc/apt/sources.list
 # Update the package database and the system
 apt update
-apt upgrade
+apt -y upgrade
 # Purge unwanted applications
 apt purge -y vim-tiny
 # Install some useful applications
