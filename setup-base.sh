@@ -33,9 +33,9 @@ for USER in $(ls /home); do
 done
 
 # Configure Nano
-cp -fv config/conf.nanorc /usr/share/nano/conf.nanorc
-cp -v /etc/nanorc /etc/nanorc.$DATE
-cp -fv config/nanorc /etc/nanorc
+#cp -fv config/conf.nanorc /usr/share/nano/conf.nanorc
+#cp -v /etc/nanorc /etc/nanorc.$DATE
+#cp -fv config/nanorc /etc/nanorc
 
 # Configure Vim
 cp -fv /etc/vim/vimrc /etc/vim/vimrc.$DATE
