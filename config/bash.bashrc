@@ -18,28 +18,14 @@ shopt -s histappend
 # update the values of LINES and COLUMNS.
 shopt -s checkwinsize
 
-# Set variable identifying the chroot you work in (used in the prompt below)
-if [ -z "${debian_chroot:-}" ] && [ -r /etc/debian_chroot ]; then
-    debian_chroot=$(cat /etc/debian_chroot)
-fi
-
 # Fancy prompt
 if [ "`id -u`" -eq 0 ]; then
   # Root account prompt (red)
-  PS1='${debian_chroot:+($debian_chroot)}\[\e[31m\]\u\[\e[m\]@\[\e[35m\]\h\[\e[m\]:\[\e[36m\]\w\[\e[m\]\$ '
+  PS1='\[\e[31m\]\u\[\e[m\]@\[\e[35m\]\h\[\e[m\]:\[\e[36m\]\w\[\e[m\]\$ '
 else
   # User account prompt (green)
-  PS1='${debian_chroot:+($debian_chroot)}\[\e[32m\]\u\[\e[m\]@\[\e[35m\]\h\[\e[m\]:\[\e[36m\]\w\[\e[m\]\$ '
+  PS1='\[\e[32m\]\u\[\e[m\]@\[\e[35m\]\h\[\e[m\]:\[\e[36m\]\w\[\e[m\]\$ '
 fi
-
-# If this is an xterm set the title to user@host:dir
-case "$TERM" in
-xterm*|rxvt*)
-    PS1="\[\e]0;${debian_chroot:+($debian_chroot)}\u@\h: \w\a\]$PS1"
-    ;;
-*)
-    ;;
-esac
 
 # Enable bash completion in interactive shells
 if ! shopt -oq posix; then
@@ -62,5 +48,5 @@ alias cp='cp -iv'
 alias mv='mv -iv'
 alias dir='dir --color=auto'
 alias grep='grep --color=auto'
-alias tree='tree -C --dirsfirst' 
+alias tree='tree -C --dirsfirst'
 alias ssh-nokey='ssh -oStrictHostKeyChecking=no -oUserKnownHostsFile=/dev/null'
