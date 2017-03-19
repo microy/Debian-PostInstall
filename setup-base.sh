@@ -57,10 +57,3 @@ if whiptail --title "GRUB setup" --yesno "Zero GRUB timeout ?" --defaultno 10 50
 	sed -i 's/GRUB_TIMEOUT=.*/GRUB_TIMEOUT=0/' /etc/default/grub
 	update-grub
 fi
-
-# Disable UUID in GRUB
-if whiptail --title "GRUB setup" --yesno "Disable UUID ?" --defaultno 10 50; then
-	sed -i 's/#GRUB_DISABLE_LINUX_UUID=.*/GRUB_DISABLE_LINUX_UUID=true/' /etc/default/grub
-	update-grub
-	echo "Don't forget to update /etc/fstab..."
-fi
