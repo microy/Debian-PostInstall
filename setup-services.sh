@@ -1,8 +1,15 @@
 #! /bin/sh
 
 #
-# System addons
+# System services
 #
+
+# Install SSH server
+install_ssh()
+{
+	# Install SSH packages
+	apt install -y openssh-server
+}
 
 # Install NTP server
 install_ntp()
@@ -50,6 +57,7 @@ install_syslogng()
 # Choose what service to install
 SERVICES=$(whiptail --title "System addon setup" --separate-output --checklist \
 "Choose additionnal services to install :" 20 78 4 \
+"SSH" "Secure Shell service" OFF \
 "NTP" "Time service" OFF \
 "SNMP" "Monitoring service" OFF \
 "SYSLOG-NG" "System logging service" OFF 3>&1 1>&2 2>&3)
@@ -57,6 +65,8 @@ SERVICES=$(whiptail --title "System addon setup" --separate-output --checklist \
 # Install selected services
 for SERVICE in $SERVICES; do
 	case $SERVICE in
+		SSH) install_ssh
+		;;
 		NTP) install_ntp
 		;;
 		SNMP) install_snmp
