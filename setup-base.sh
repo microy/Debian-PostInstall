@@ -38,8 +38,8 @@ done
 #cp -fv config/nanorc /etc/nanorc
 
 # Configure Vim
-cp -fv /etc/vim/vimrc /etc/vim/vimrc.$DATE
-cp -fv config/vimrc /etc/vim/vimrc
+sed -i 's/^"syntax on/syntax on/' /etc/vim/vimrc
+sed -i 's/^"set background/set background/' /etc/vim/vimrc
 
 # Configure minicom
 cp -fv config/minirc.dfl /etc/minicom/minirc.dfl
