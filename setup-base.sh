@@ -16,10 +16,6 @@ apt install -y tree vim unzip deborphan git minicom mtr-tiny tcpdump ndisc6 \
 netcat-openbsd netstat-nat iperf ipcalc iptraf htop iftop iotop bmon nmap \
 exfat-fuse
 
-# Remove persistent network interface in udev
-rm -fv /etc/udev/rules.d/70-persistent-net.rules
-: > /etc/udev/rules.d/75-persistent-net-generator.rules
-
 # Activate 'numlock'
 sed -i 's/#LEDS=+num/LEDS=+num/' /etc/kbd/config
 
