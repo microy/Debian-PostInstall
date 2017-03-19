@@ -54,8 +54,8 @@ install_syslogng()
 	systemctl restart syslog-ng
 }
 
-# Choose what service to install
-SERVICES=$(whiptail --title "System addon setup" --separate-output --checklist \
+# Choose what services to install
+SERVICES=$(whiptail --title "System services setup" --separate-output --checklist \
 "Choose additionnal services to install :" 20 78 4 \
 "SSH" "Secure Shell service" OFF \
 "NTP" "Time service" OFF \
