@@ -4,6 +4,8 @@
 # Base system configuration
 #
 
+# Get the date
+DATE=$(date "+%Y%m%d")
 # Setup apt sources in France
 cp -fv config/sources.list.france /etc/apt/sources.list
 # Update the package database and the system
@@ -20,10 +22,10 @@ apt -y autoclean
 cp -fv config/bash.bashrc /etc/bash.bashrc
 rm -fv /etc/skel/.bashrc
 # Remove local bashrc files
-rm -fv /root/.bashrc
+mv -fv /root/.bashrc /root/.bashrc.$DATE
 for USER in $(ls /home); do
 	if [ "$USER" = 'lost+found' ]; then continue; fi
-	rm -fv /home/$USER/.bashrc
+	mv -fv /home/$USER/.bashrc /home/$USER/.bashrc.$DATE
 done
 # Configure Nano
 #cp -fv config/conf.nanorc /usr/share/nano/conf.nanorc
