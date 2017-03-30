@@ -4,13 +4,7 @@
 
 - Check numlock
 - Check files before removal
-- Backup previous config files
 - Check UUID
-- Update applications
-- Check grub_updated variable
-- Check Minicom config
-- Check Nano config
-- Check Vim config
 - Update Bashrc config
 
 ## Gnome
@@ -34,8 +28,12 @@
 - Check CNTLM config
 - Add and setup IUT wallpaper
 
-## Addons
+## Services
 
 - Check NTP config
 - Check SNMP config
 - Check Syslog-Ng config
+
+## Applications
+
+- Make a script to install useful applications
