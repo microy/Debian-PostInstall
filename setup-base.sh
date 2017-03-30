@@ -27,7 +27,11 @@ for USER in $(ls /home); do
 done
 # Install VirtualBox guest additions
 if whiptail --title "VirtualBox setup" --yesno "Install VirtualBox guest additions ?" --defaultno 10 50; then
-	apt install -y --no-install-recommends virtualbox-guest-dkms linux-headers-amd64
+#	apt install -y --no-install-recommends virtualbox-guest-dkms linux-headers-amd64
+	apt install -y dkms linux-headers-amd64 build-essential
+	mount /media/cdrom
+	cd /media/cdrom
+	sh ./VBoxLinuxAdditions.run
 fi
 # Zero GRUB timeout
 if whiptail --title "GRUB setup" --yesno "Zero GRUB timeout ?" --defaultno 10 50; then
