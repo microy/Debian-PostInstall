@@ -8,10 +8,6 @@
 cp -fv config/issue /etc/issue
 cp -fv config/issue.net /etc/issue.net
 rm -fv /etc/motd
-
-# Install some useful applications
-apt install -y ndisc6 netstat-nat ipcalc
-
 # Setup apt sources to use our local mirror
 if whiptail --title "APT setup" --yesno "Use local mirror server ?" --defaultno 10 50; then
 	# Configure APT sources
@@ -19,7 +15,6 @@ if whiptail --title "APT setup" --yesno "Use local mirror server ?" --defaultno 
 	# Update package database
 	apt update
 fi
-
 # Setup NTP client to use our local time server
 if whiptail --title "NTP setup" --yesno "Use local time server ?" --defaultno 10 50; then
 	# Install NTP package
@@ -29,7 +24,6 @@ if whiptail --title "NTP setup" --yesno "Use local time server ?" --defaultno 10
 	# Restart NTP service
 	systemctl restart ntp
 fi
-
 # Setup CNTLM for authentication with our local proxy server
 if whiptail --title "CNTLM setup" --yesno "Use local proxy server ?" --defaultno 10 50; then
 	# Install CNTLM package
