@@ -7,6 +7,7 @@
 # Get the date
 DATE=$(date "+%Y%m%d")
 # Setup apt sources in France
+cp -fv /etc/apt/sources.list /etc/apt/sources.list.$DATE
 cp -fv config/sources.list.france /etc/apt/sources.list
 # Update the package database and the system
 apt update
@@ -15,6 +16,7 @@ apt -y upgrade
 apt -y autoremove
 apt -y autoclean
 # Configure Bash
+cp -fv /etc/bash.bashrc /etc/bash.bashrc.$DATE
 cp -fv config/bash.bashrc /etc/bash.bashrc
 rm -fv /etc/skel/.bashrc
 # Remove local bashrc files
