@@ -1,11 +1,8 @@
 # Debian
 deb http://10.129.44.50/debian stretch main contrib non-free
-
 # Updates
 deb http://10.129.44.50/debian stretch-updates main contrib non-free
-
 # Backports
 #deb http://10.129.44.50/debian stretch-backports main contrib non-free
-
 # Security
 deb http://10.129.44.50/security.debian stretch/updates main contrib non-free
