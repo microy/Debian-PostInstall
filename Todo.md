@@ -33,7 +33,3 @@
 - Check NTP config
 - Check SNMP config
 - Check Syslog-Ng config
-
-## Applications
-
-- Make a script to install useful applications

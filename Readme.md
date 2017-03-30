@@ -8,6 +8,7 @@ Post-installation scripts for Debian stable.
   - Configure Apt sources (main, contrib, non-free, backports)
   - Install VirtualBox guest additions (optionnal)
   - Zero Grub timeout (optionnal)
+  - Install and configure some applications (optionnal)
 
 ## Gnome
 
@@ -29,7 +30,3 @@ Post-installation scripts for Debian stable.
   - Configure Apt to use our local mirror server (optionnal)
   - Configure Ntp to use our local mirror server (optionnal)
   - Configure Cntlm to use our local proxy server (optionnal)
-
-## Applications (coming soon)
-
-  - Install and configure applications
