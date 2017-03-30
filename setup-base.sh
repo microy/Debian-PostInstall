@@ -11,10 +11,6 @@ cp -fv config/sources.list.france /etc/apt/sources.list
 # Update the package database and the system
 apt update
 apt -y upgrade
-# Purge unwanted applications
-apt purge -y vim-tiny
-# Install some useful applications
-apt install -y tree vim git minicom mtr-tiny tcpdump iperf nmap htop
 # Cleanup the packages
 apt -y autoremove
 apt -y autoclean
@@ -27,15 +23,6 @@ for USER in $(ls /home); do
 	if [ "$USER" = 'lost+found' ]; then continue; fi
 	mv -fv /home/$USER/.bashrc /home/$USER/.bashrc.$DATE
 done
-# Configure Nano
-#cp -fv config/conf.nanorc /usr/share/nano/conf.nanorc
-#cp -v /etc/nanorc /etc/nanorc.$DATE
-#cp -fv config/nanorc /etc/nanorc
-# Configure Vim
-sed -i 's/^"syntax on/syntax on/' /etc/vim/vimrc
-sed -i 's/^"set background/set background/' /etc/vim/vimrc
-# Configure minicom
-cp -fv config/minirc.dfl /etc/minicom/minirc.dfl
 # Install VirtualBox guest additions
 if whiptail --title "VirtualBox setup" --yesno "Install VirtualBox guest additions ?" --defaultno 10 50; then
 	apt install -y --no-install-recommends virtualbox-guest-dkms linux-headers-amd64
