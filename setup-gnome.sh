@@ -27,37 +27,44 @@ gnome-clocks reportbug seahorse gnome-software synaptic gnome-disk-utility gnome
 gnome-characters gnome-color-manager gnome-font-viewer gnome-user-guide gnome-accessibility-themes \
 gnome-orca gnome-online-accounts gnome-online-miners baobab
 
+apt purge --yes --autoremove gnome gnome-games gnome-contacts \
+gnome-disk-utility gnome-user-guide gnome-accessibility-themes \
+gnome-orca gnome-online-accounts gnome-characters gnome-font-viewer \
+gnome-online-miners gnome-software gnome-sushi gnome-logs baobab tracker reportbug
 
 # Install useful applications
-apt install --yes libreoffice vlc
+apt install --yes libreoffice vlc ttf-mscorefonts-installer
 
 #apt install -y gip wireshark ttf-mscorefonts-installer flashplugin-nonfree \
 #geany gparted vlc virtualbox numlockx firefox-esr firefox-esr-l10n-fr
 
 # Configure font rendering
-ln -sf /usr/share/fontconfig/conf.avail/10-autohint.conf /etc/fonts/conf.d/
-ln -sf /usr/share/fontconfig/conf.avail/10-sub-pixel-rgb.conf /etc/fonts/conf.d/
-ln -sf /usr/share/fontconfig/conf.avail/70-no-bitmaps.conf /etc/fonts/conf.d/
+#ln -sf /usr/share/fontconfig/conf.avail/10-autohint.conf /etc/fonts/conf.d/
+#ln -sf /usr/share/fontconfig/conf.avail/10-sub-pixel-rgb.conf /etc/fonts/conf.d/
+#ln -sf /usr/share/fontconfig/conf.avail/70-no-bitmaps.conf /etc/fonts/conf.d/
 
 # Setup default background
-update-alternatives --set desktop-grub /usr/share/images/desktop-base/joy-grub.png
-update-alternatives --set desktop-background.xml /usr/share/images/desktop-base/joy.xml
-update-alternatives --set desktop-background /usr/share/images/desktop-base/joy-wallpaper_1920x1200.svg
+#update-alternatives --set desktop-grub /usr/share/images/desktop-base/joy-grub.png
+#update-alternatives --set desktop-background.xml /usr/share/images/desktop-base/joy.xml
+#update-alternatives --set desktop-background /usr/share/images/desktop-base/joy-wallpaper_1920x1200.svg
+update-alternatives --set desktop-grub /usr/share/desktop-base/joy-theme/grub/grub-16x9.png
+update-alternatives --set desktop-background.xml /usr/share/desktop-base/joy-theme/wallpaper/gnome-background.xml
+update-alternatives --set desktop-background /usr/share/desktop-base/joy-theme/wallpaper/contents/images/1920x1200.svg
 dpkg-reconfigure desktop-base
 
 # Setup Gnome Shell
 # FIXME !!!!
-cp -fv config/gnome.conf /usr/share/glib-2.0/schemas/20_desktop-base.gschema.override
-glib-compile-schemas /usr/share/glib-2.0/schemas
+#cp -fv config/gnome.conf /usr/share/glib-2.0/schemas/20_desktop-base.gschema.override
+#glib-compile-schemas /usr/share/glib-2.0/schemas
 
 # Download and install Atom
-./config/update-atom
+#./config/update-atom
 
 # Add script to update Atom
-cp -fv config/update-atom /usr/local/sbin/
+#cp -fv config/update-atom /usr/local/sbin/
 
 # Download and install Google Chrome
-./config/update-chrome
+#./config/update-chrome
 
 # Add script to update Atom
-cp -fv config/update-chrome /usr/local/sbin/
+#cp -fv config/update-chrome /usr/local/sbin/
