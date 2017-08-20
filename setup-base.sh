@@ -12,6 +12,8 @@ cp -fv config/sources.list.france /etc/apt/sources.list
 # Update the package database and the system
 apt update
 apt -y upgrade
+# Install Linux firmware
+apt -y install firmware-linux-nonfree
 # Cleanup the packages
 apt -y autoremove
 apt -y autoclean
