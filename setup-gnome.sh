@@ -30,7 +30,8 @@ gnome-orca gnome-online-accounts gnome-online-miners baobab
 apt purge --yes --autoremove gnome gnome-games gnome-contacts \
 gnome-disk-utility gnome-user-guide gnome-accessibility-themes \
 gnome-orca gnome-online-accounts gnome-characters gnome-font-viewer \
-gnome-online-miners gnome-software gnome-sushi gnome-logs baobab tracker reportbug
+gnome-online-miners gnome-software gnome-sushi gnome-logs baobab \
+tracker reportbug avahi-daemon yelp
 
 # Install useful applications
 apt install --yes libreoffice vlc ttf-mscorefonts-installer
