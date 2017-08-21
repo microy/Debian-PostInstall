@@ -32,7 +32,8 @@ done
 # Install VirtualBox guest additions
 if whiptail --title "VirtualBox setup" --yesno "Install VirtualBox guest additions ?" --defaultno 10 50; then
 #	apt install -y --no-install-recommends virtualbox-guest-dkms linux-headers-amd64
-	apt install -y dkms linux-headers-amd64 build-essential
+	apt install -y dkms linux-headers-amd64 build-essential module-assistant
+	m-a prepare
 	mount /media/cdrom
 	cd /media/cdrom
 	sh ./VBoxLinuxAdditions.run
