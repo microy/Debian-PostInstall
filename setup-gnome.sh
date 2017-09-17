@@ -27,6 +27,5 @@ update-alternatives --set desktop-login-background /usr/share/desktop-base/joy-t
 dpkg-reconfigure desktop-base
 
 # Setup Gnome Shell
-# FIXME !!!!
-#cp -fv config/gnome.conf /usr/share/glib-2.0/schemas/20_desktop-base.gschema.override
-#glib-compile-schemas /usr/share/glib-2.0/schemas
+cp -fv config/gnome.conf /usr/share/glib-2.0/schemas/20_debian_postinstall.gschema.override
+glib-compile-schemas /usr/share/glib-2.0/schemas
