@@ -5,13 +5,13 @@
 #
 
 # Configure system banners
-cp -fv config/issue /etc/issue
-cp -fv config/issue.net /etc/issue.net
+cp -fv config-iut/issue /etc/issue
+cp -fv config-iut/issue.net /etc/issue.net
 rm -fv /etc/motd
 # Setup apt sources to use our local mirror
 if whiptail --title "APT setup" --yesno "Use local APT mirror server ?" --defaultno 10 50; then
 	# Configure APT sources
-	cp -fv config/sources.list.iut /etc/apt/sources.list
+	cp -fv config-iut/sources.list /etc/apt/sources.list
 	# Update package database
 	apt update
 fi
@@ -32,8 +32,8 @@ if whiptail --title "CNTLM setup" --yesno "Use local proxy server ?" --defaultno
 	systemctl stop cntlm
 	systemctl disable cntlm
 	# Configure CNTLM
-	cp -fv config/cntlm.conf /etc/cntlm.conf
+	cp -fv config-iut/cntlm.conf /etc/cntlm.conf
 	# Copy the scripts to start and stop the local proxy
-	cp -fv config/proxy-start /usr/local/sbin/
-	cp -fv config/proxy-stop /usr/local/sbin/
+	cp -fv config-iut/proxy-start /usr/local/sbin/
+	cp -fv config-iut/proxy-stop /usr/local/sbin/
 fi
