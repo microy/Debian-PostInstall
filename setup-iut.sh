@@ -17,7 +17,7 @@ if whiptail --title "APT setup" --yesno "Use local APT mirror server ?" --defaul
 fi
 # Setup NTP client to use our local time server
 if whiptail --title "NTP setup" --yesno "Use local time server ?" --defaultno 10 50; then
-	sed -i '/^NTP/d' /etc/systemd/timesyncd.conf
+	sed -i 's/^NTP=*/#NTP=*/' /etc/systemd/timesyncd.conf
 	echo "NTP=192.168.5.5" >> /etc/systemd/timesyncd.conf
 	timedatectl set-ntp true
 	systemctl restart systemd-timesyncd.service
