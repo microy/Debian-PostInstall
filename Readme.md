@@ -5,13 +5,11 @@ Post-installation scripts for Debian stable.
 
 ## Setup scripts
 
+
 ### Base
 
   - Configure Bash (prompt, alias, options, completion)
   - Configure Apt sources (main, contrib, non-free, backports)
-  - Install VirtualBox guest additions (optionnal)
-  - Zero Grub timeout (optionnal)
-  - Install and configure some applications (optionnal)
 
 
 ### Gnome
@@ -19,6 +17,7 @@ Post-installation scripts for Debian stable.
   - Remove unwanted applications (make a minimal Gnome)
   - Configure font rendering
   - Setup Joy theme
+
 
 ### IUT
 

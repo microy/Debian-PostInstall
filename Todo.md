@@ -1,11 +1,6 @@
 # Todo list
 
 
-## Base
-
-  - Remove virtualbox, firmware, grub
-
-
 ## Gnome
 
 - Update Gnome setup
