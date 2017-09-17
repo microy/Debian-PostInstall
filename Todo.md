@@ -1,26 +1,9 @@
 # Todo list
 
-## Base
-
-- Check numlock
-- Check files before removal
-- Check UUID
-- Update Bashrc config
-
 ## Gnome
 
-- Update unwanted applications
-- Update useful applications
-- Don't copy all desktop files
-- Check font rendering
-- Update background
 - Update Gnome setup
-- Check Packet Tracer desktop file
 - Scripts to check Gnome configuration updates
-
-### Extensions
-
-- Dash to panel
 
 ## IUT
 
