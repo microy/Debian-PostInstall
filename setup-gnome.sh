@@ -18,10 +18,12 @@ gnome-orca gnome-online-accounts baobab tracker avahi-daemon yelp
 ln -sf /usr/share/fontconfig/conf.avail/10-autohint.conf /etc/fonts/conf.d/
 ln -sf /usr/share/fontconfig/conf.avail/10-sub-pixel-rgb.conf /etc/fonts/conf.d/
 
-# Setup default background
+# Setup Joy theme
+update-alternatives --set desktop-theme /usr/share/desktop-base/joy-theme
 update-alternatives --set desktop-grub /usr/share/desktop-base/joy-theme/grub/grub-16x9.png
 update-alternatives --set desktop-background.xml /usr/share/desktop-base/joy-theme/wallpaper/gnome-background.xml
 update-alternatives --set desktop-background /usr/share/desktop-base/joy-theme/wallpaper/contents/images/1920x1200.svg
+update-alternatives --set desktop-login-background /usr/share/desktop-base/joy-theme/login/background.svg
 dpkg-reconfigure desktop-base
 
 # Setup Gnome Shell
