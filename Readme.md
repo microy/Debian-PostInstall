@@ -2,7 +2,10 @@
 
 Post-installation scripts for Debian stable.
 
-## Base
+
+## Setup scripts
+
+### Base
 
   - Configure Bash (prompt, alias, options, completion)
   - Configure Apt sources (main, contrib, non-free, backports)
@@ -10,23 +13,32 @@ Post-installation scripts for Debian stable.
   - Zero Grub timeout (optionnal)
   - Install and configure some applications (optionnal)
 
-## Gnome
 
-  - Remove unwanted applications
-  - Install useful applications (Wireshark, VirtualBox, Flash...)
-  - Setup Gnome Shell (background, extensions...)
+### Gnome
 
-## Services
+  - Remove unwanted applications (make a minimal Gnome)
+  - Configure font rendering
+  - Setup Joy theme
 
-  - Install and configure services
-    - SSH
-    - NTP
-    - SNMP
-    - SysLog-NG
-
-## IUT
+### IUT
 
   - Configure system banners
   - Configure Apt to use our local mirror server (optionnal)
   - Configure Ntp to use our local mirror server (optionnal)
   - Configure Cntlm to use our local proxy server (optionnal)
+
+
+### NTP
+
+  - Configure NTP client for french time servers
+
+
+## Install scripts
+
+Install some applications :
+
+  - Atom
+  - Chrome
+  - Firmware
+  - VirtualBox Guest additions
+  - Zero GRUB timeout
