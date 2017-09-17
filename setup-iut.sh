@@ -9,7 +9,7 @@ cp -fv config/issue /etc/issue
 cp -fv config/issue.net /etc/issue.net
 rm -fv /etc/motd
 # Setup apt sources to use our local mirror
-if whiptail --title "APT setup" --yesno "Use local mirror server ?" --defaultno 10 50; then
+if whiptail --title "APT setup" --yesno "Use local APT mirror server ?" --defaultno 10 50; then
 	# Configure APT sources
 	cp -fv config/sources.list.iut /etc/apt/sources.list
 	# Update package database
@@ -17,12 +17,12 @@ if whiptail --title "APT setup" --yesno "Use local mirror server ?" --defaultno 
 fi
 # Setup NTP client to use our local time server
 if whiptail --title "NTP setup" --yesno "Use local time server ?" --defaultno 10 50; then
-	# Install NTP package
-	apt install -y ntp
-	# Configure NTP server
-	cp -fv config/ntp.conf.iut /etc/ntp.conf
-	# Restart NTP service
-	systemctl restart ntp
+	sed -i '/^NTP/d' /etc/systemd/timesyncd.conf
+	echo "NTP=192.168.5.5" >> /etc/systemd/timesyncd.conf
+	timedatectl set-ntp true
+	systemctl restart systemd-timesyncd.service
+	systemctl status systemd-timesyncd.service
+	timedatectl status
 fi
 # Setup CNTLM for authentication with our local proxy server
 if whiptail --title "CNTLM setup" --yesno "Use local proxy server ?" --defaultno 10 50; then

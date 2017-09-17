@@ -10,16 +10,6 @@ install_ssh()
 	# Install SSH packages
 	apt install -y openssh-server
 }
-# Install NTP server
-install_ntp()
-{
-	# Install NTP packages
-	apt install -y ntp
-	# Configure NTP servers in France
-	cp -fv config/ntp.conf.france /etc/ntp.conf
-	# Restart NTP service
-	systemctl restart ntp
-}
 # Install SNMP server
 install_snmp()
 {
@@ -48,15 +38,12 @@ install_syslogng()
 SERVICES=$(whiptail --title "System services setup" --separate-output --checklist \
 "Choose additionnal services to install :" 20 78 4 \
 "SSH" "Secure Shell service" OFF \
-"NTP" "Time service" OFF \
 "SNMP" "Monitoring service" OFF \
 "SYSLOG-NG" "System logging service" OFF 3>&1 1>&2 2>&3)
 # Install selected services
 for SERVICE in $SERVICES; do
 	case $SERVICE in
 		SSH) install_ssh
-		;;
-		NTP) install_ntp
 		;;
 		SNMP) install_snmp
 		;;
