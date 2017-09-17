@@ -12,7 +12,7 @@ gnome-calendar gnome-maps gnome-music gnome-sushi polari evolution gnome-diction
 cheese rhythmbox totem gnome-getting-started-docs gnome-sound-recorder simple-scan \
 gnome-clocks reportbug seahorse gnome-software synaptic gnome-disk-utility gnome-logs \
 gnome-characters gnome-color-manager gnome-font-viewer gnome-user-guide gnome-accessibility-themes \
-gnome-orca gnome-online-accounts baobab tracker avahi-daemon yelp file-roler
+gnome-orca gnome-online-accounts baobab tracker avahi-daemon yelp file-roller
 
 # Configure font rendering
 ln -sf /usr/share/fontconfig/conf.avail/10-autohint.conf /etc/fonts/conf.d/
