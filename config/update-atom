@@ -1,8 +1,0 @@
-#! /bin/sh
-
-#
-# Install / Update Atom
-#
-
-wget -O /tmp/atom.deb https://atom.io/download/deb
-dpkg -i /tmp/atom.deb

@@ -1,6 +1,7 @@
 #! /bin/sh
 
-# Download and install Google Chrome
-./config/update-chrome
-# Copy the script to update Google Chrome
-cp -fv ./config/update-chrome /usr/local/sbin/
+# Download Google Chrome
+wget -O /tmp/chrome.deb https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
+# Install Google Chrome
+dpkg -i /tmp/chrome.deb
+apt -f -y install

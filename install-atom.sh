@@ -1,6 +1,7 @@
 #! /bin/sh
 
-# Download and install Atom
-./config/update-atom
-# Copy the script to update Atom
-cp -fv ./config/update-atom /usr/local/sbin/
+# Download Atom
+wget -O /tmp/atom.deb https://atom.io/download/deb
+# Install Atom
+dpkg -i /tmp/atom.deb
+apt -f -y install
