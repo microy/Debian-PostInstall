@@ -15,10 +15,6 @@ gnome-characters gnome-color-manager gnome-font-viewer gnome-user-guide gnome-ac
 gnome-orca gnome-online-accounts baobab tracker avahi-daemon yelp file-roller \
 shotwell brasero
 
-# Configure font rendering
-ln -sf /usr/share/fontconfig/conf.avail/10-autohint.conf /etc/fonts/conf.d/
-ln -sf /usr/share/fontconfig/conf.avail/10-sub-pixel-rgb.conf /etc/fonts/conf.d/
-
 # Setup Joy theme
 update-alternatives --set desktop-theme /usr/share/desktop-base/joy-theme
 update-alternatives --set desktop-grub /usr/share/desktop-base/joy-theme/grub/grub-16x9.png
