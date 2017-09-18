@@ -2,9 +2,7 @@
 
 Post-installation scripts for Debian stable.
 
-
 ## Setup scripts
-
 
 ### Base
 
@@ -16,10 +14,8 @@ Post-installation scripts for Debian stable.
 ### Gnome
 
   - Remove unwanted applications (make a minimal Gnome)
-  - Configure font rendering
   - Configure the system theme (Joy)
   - Configure Gnome Shell
-
 
 ### IUT
 
@@ -27,6 +23,7 @@ Post-installation scripts for Debian stable.
   - Configure Apt to use our local mirror server (optionnal)
   - Configure Ntp to use our local mirror server (optionnal)
   - Configure Cntlm to use our local proxy server (optionnal)
+  - Configure Gnome Shell (optionnal)
 
 
 ### NTP
