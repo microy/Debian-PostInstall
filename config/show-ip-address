@@ -1,0 +1,14 @@
+#! /bin/sh
+
+if [ "$METHOD" = loopback ]; then
+    exit 0
+fi
+
+# Only run from ifup.
+if [ "$MODE" != start ]; then
+    exit 0
+fi
+
+cp /etc/issue-standard /etc/issue
+ip -o addr show up primary scope global | awk '{print $2":",$4}' >> /etc/issue
+echo "" >> /etc/issue
