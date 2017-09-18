@@ -8,15 +8,17 @@ Post-installation scripts for Debian stable.
 
 ### Base
 
-  - Configure Bash (prompt, alias, options, completion)
   - Configure Apt sources (main, contrib, non-free, backports)
-
+  - Update the system
+  - Configure Bash (prompt, alias, options, completion)
+  - Configure Nano (conf file syntax highlight)
 
 ### Gnome
 
   - Remove unwanted applications (make a minimal Gnome)
   - Configure font rendering
-  - Setup Joy theme
+  - Configure the system theme (Joy)
+  - Configure Gnome Shell
 
 
 ### IUT
