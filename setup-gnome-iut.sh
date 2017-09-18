@@ -6,8 +6,7 @@
 #
 
 # Copy the IUT wallpaper
-mkdir -p /usr/local/share/wallpapers
-cp -fv config-iut/rt_wallpaper_2013.png /usr/local/share/wallpapers/
+cp -fv config-iut/rt_wallpaper_2013.png /usr/share/wallpapers/
 
 # Make the necessary directories for dconf
 mkdir -p /etc/dconf/profile
