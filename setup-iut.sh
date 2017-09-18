@@ -37,3 +37,20 @@ if whiptail --title "CNTLM setup" --yesno "Use local proxy server ?" --defaultno
 	cp -fv config-iut/proxy-start /usr/local/sbin/
 	cp -fv config-iut/proxy-stop /usr/local/sbin/
 fi
+# Setup Gnome
+if whiptail --title "Gnome setup" --yesno "Configure Gnome for IUT ?" --defaultno 10 50; then
+	# Copy the IUT wallpaper
+	cp -fv config-iut/rt_wallpaper_2013.png /usr/share/wallpapers/
+	# Make the necessary directories for dconf
+	mkdir -p /etc/dconf/profile
+	mkdir -p /etc/dconf/db/local.d/locks
+	# Create the dconf user profile
+	echo 'user-db:user
+	system-db:local' > /etc/dconf/profile/user
+	# Setup Gnome settings for IUT
+	cp -fv config-iut/gnome-iut.conf /etc/dconf/db/local.d/
+	# Lockdown Gnome settings
+	cp -fv config-iut/gnome-iut-locks.conf /etc/dconf/db/local.d/locks/
+	# Update dconf
+	dconf update
+fi
