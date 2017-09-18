@@ -9,6 +9,9 @@ cp -fv config-iut/issue /etc/issue
 cp -fv config-iut/issue.net /etc/issue.net
 rm -fv /etc/motd
 
+# Add a clone hosts file for system cloning
+cp -fv config-iut/hosts.clone /etc/hosts.clone
+
 # Select additionnal setup
 SETUPIUT=$(whiptail --title "IUT Configuration" --checklist \
 "Choose what to setup :" 20 78 4 \
