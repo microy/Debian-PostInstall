@@ -8,8 +8,9 @@ Post-installation scripts for Debian stable.
 
   - Configure Apt sources (main, contrib, non-free, backports)
   - Update the system
-  - Configure Bash (prompt, alias, options, completion)
+  - Configure Bash (fancy prompt, aliases, options, completion)
   - Configure Nano (conf file syntax highlight)
+  - Configure Sudo (keep SSH environment variables)
 
 ### Gnome
 
@@ -30,6 +31,9 @@ Post-installation scripts for Debian stable.
 
   - Configure NTP client for french time servers
 
+### IP address
+
+  - Show active IP addresses in the pre-login console message
 
 ## Install scripts
 
