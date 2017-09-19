@@ -28,4 +28,6 @@ done
 # Configure nano
 cp -fv config/conf.nanorc /usr/share/nano/conf.nanorc
 # Configure sudo to keep SSH environment variables
+cp -fv /etc/sudoers /etc/sudoers.$DATE
+echo '# Keep SSH environment variables' >> /etc/sudoers
 echo 'Defaults env_keep += "SSH_*"' >> /etc/sudoers
