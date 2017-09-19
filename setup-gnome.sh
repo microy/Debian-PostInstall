@@ -13,7 +13,7 @@ cheese rhythmbox totem gnome-getting-started-docs gnome-sound-recorder simple-sc
 gnome-clocks reportbug seahorse gnome-software synaptic gnome-disk-utility gnome-logs \
 gnome-characters gnome-color-manager gnome-font-viewer gnome-user-guide gnome-accessibility-themes \
 gnome-orca gnome-online-accounts baobab tracker avahi-daemon yelp file-roller \
-shotwell brasero libreoffice-common inkscape gimp gnome-calculator
+shotwell brasero libreoffice-common inkscape gimp gnome-calculator vinagre
 
 # Setup Joy theme
 update-alternatives --set desktop-theme /usr/share/desktop-base/joy-theme
