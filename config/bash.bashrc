@@ -18,14 +18,28 @@ shopt -s histappend
 # update the values of LINES and COLUMNS.
 shopt -s checkwinsize
 
-# Fancy prompt
-if [ "`id -u`" -eq 0 ]; then
-  # Root account prompt (red)
-  PS1='\[\e[31m\]\u\[\e[m\]@\[\e[35m\]\h\[\e[m\]:\[\e[36m\]\w\[\e[m\]\$ '
+# Highlight the user name when logged in as root.
+if [[ "${USER}" == "root" ]]; then
+	userStyle="\e[31m";
 else
-  # User account prompt (green)
-  PS1='\[\e[32m\]\u\[\e[m\]@\[\e[35m\]\h\[\e[m\]:\[\e[36m\]\w\[\e[m\]\$ '
-fi
+	userStyle="\e[32m";
+fi;
+
+# Highlight the hostname when connected via SSH.
+if [[ "${SSH_TTY}" ]]; then
+	hostStyle="\e[31m";
+else
+	hostStyle="\e[33m";
+fi;
+
+# Fancy prompt
+PS1="\[${userStyle}\]\u";  # User
+PS1+="\[\e[m\]@";          # @
+PS1+="\[${hostStyle}\]\h"; # Host
+PS1+="\[\e[m\]:";          # :
+PS1+="\[\e[36m\]\w";       # Working directory
+PS1+="\[\e[m\]\\$ ";       # $
+
 
 # Enable bash completion in interactive shells
 if ! shopt -oq posix; then
