@@ -13,7 +13,7 @@ rm -fv /etc/motd
 cp -fv config-iut/hosts.clone /etc/hosts.clone
 
 # Select additionnal setup
-SETUPIUT=$(whiptail --title "IUT Configuration" --checklist \
+SETUPIUT=$(whiptail --title "IUT Configuration" --checklist  --separate-output \
 "Choose what to setup :" 20 78 4 \
 "APT" "Use local APT mirror server" OFF \
 "NTP" "Use local NTP time server" OFF \
@@ -79,13 +79,9 @@ setup_gnome()
 # Install selected setups
 for SETUP in $SETUPIUT; do
 	case $SETUP in
-		APT) setup_apt
-		;;
-		NTP) setup_ntp
-		;;
-		CNTLM) setup_cntlm
-		;;
-		GNOME) setup_gnome
-		;;
+		APT) setup_apt;;
+		NTP) setup_ntp;;
+		CNTLM) setup_cntlm;;
+		GNOME) setup_gnome;;
 	esac
 done
