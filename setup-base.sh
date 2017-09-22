@@ -25,8 +25,9 @@ for USER in $(ls /home); do
 	if [ "$USER" = 'lost+found' ]; then continue; fi
 	mv -fv /home/$USER/.bashrc /home/$USER/.bashrc.$DATE
 done
+# Configure sudo to keep SSH environment variables
+echo '# Keep SSH environment variables
+Defaults	env_keep += "SSH_*"' > /etc/sudoers.d/ssh
+chmod 440 /etc/sudoers.d/ssh
 # Configure nano to highlight conf file syntax
 cp -fv config/conf.nanorc /usr/share/nano/conf.nanorc
-# Configure sudo to keep SSH environment variables
-cp -fv /etc/sudoers /etc/sudoers.$DATE
-cp -fv config/sudoers /etc/sudoers
