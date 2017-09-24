@@ -19,26 +19,26 @@ shopt -s histappend
 shopt -s checkwinsize
 
 # Highlight the user name when logged in as root.
-if [[ "${USER}" == "root" ]]; then
-	userStyle="\e[31m";
+if [ "${USER}" = "root" ]; then
+	user_style="\e[31m";
 else
-	userStyle="\e[32m";
+	user_style="\e[32m";
 fi;
 
 # Highlight the hostname when connected via SSH.
-if [[ "${SSH_TTY}" ]]; then
-	hostStyle="\e[31m";
+if [ -n "${SSH_TTY}" ]; then
+	host_style="\e[31m";
 else
-	hostStyle="\e[33m";
+	host_style="\e[33m";
 fi;
 
 # Fancy prompt
-PS1="\[${userStyle}\]\u";  # User
-PS1+="\[\e[m\]@";          # @
-PS1+="\[${hostStyle}\]\h"; # Host
-PS1+="\[\e[m\]:";          # :
-PS1+="\[\e[36m\]\w";       # Working directory
-PS1+="\[\e[m\]\\$ ";       # $
+PS1="\[${user_style}\]\u";  # User
+PS1+="\[\e[m\]@";           # @
+PS1+="\[${host_style}\]\h"; # Host
+PS1+="\[\e[m\]:";           # :
+PS1+="\[\e[36m\]\w";        # Working directory
+PS1+="\[\e[m\]\\$ ";        # $
 
 
 # Enable bash completion in interactive shells
