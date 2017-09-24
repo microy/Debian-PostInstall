@@ -1,7 +1,4 @@
 # Todo list
 
-
-## IUT
-
-- Check NTP config
 - Check CNTLM config
+- Find the font solution...
