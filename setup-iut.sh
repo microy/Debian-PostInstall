@@ -7,7 +7,12 @@
 # Configure system banners
 cp -fv config-iut/issue /etc/issue
 cp -fv config-iut/issue.net /etc/issue.net
-rm -fv /etc/motd
+: > /etc/motd
+
+# Configure SSH banner
+cp -fv /etc/ssh/sshd_config /etc/ssh/sshd_config.$(date "+%Y%m%d")
+sed -i 's/^#Banner.*/Banner \/etc\/issue.net/' /etc/ssh/sshd_config
+systemctl restart ssh
 
 # Add a clone hosts file for system cloning
 cp -fv config-iut/hosts.clone /etc/hosts.clone
