@@ -1,16 +1,22 @@
 #! /bin/sh
 
 #
-# Configure system banners, and apt sources
+# Configure system banners, apt sources, NTP, cntlm, and Gnome
 #
 
+# Get the date
+DATE=$(date "+%Y%m%d")
+
 # Configure system banners
+cp -fv /etc/issue /etc/issue.$DATE
 cp -fv config-iut/issue /etc/issue
+cp -fv /etc/issue.net /etc/issue.net.$DATE
 cp -fv config-iut/issue.net /etc/issue.net
+cp -fv /etc/motd /etc/motd.$DATE
 : > /etc/motd
 
 # Configure SSH banner
-cp -fv /etc/ssh/sshd_config /etc/ssh/sshd_config.$(date "+%Y%m%d")
+cp -fv /etc/ssh/sshd_config /etc/ssh/sshd_config.$DATE
 sed -i 's/^#Banner.*/Banner \/etc\/issue.net/' /etc/ssh/sshd_config
 systemctl restart ssh
 
