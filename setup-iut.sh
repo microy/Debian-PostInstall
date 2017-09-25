@@ -44,7 +44,7 @@ for SETUP in $SETUPIUT; do
 		# Setup NTP client to use our local time server
 		NTP)
 			# Remove previous server configuration
-			sed -i 's/^NTP=*/#NTP=*/' /etc/systemd/timesyncd.conf
+			sed -i 's/^NTP=/#NTP=/' /etc/systemd/timesyncd.conf
 			# Add our own local NTP server
 			echo "NTP=192.168.5.5" >> /etc/systemd/timesyncd.conf
 			# Use the NTP configuration
