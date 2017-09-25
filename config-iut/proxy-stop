@@ -7,4 +7,4 @@
 # Stop CNTLM service
 killall cntlm
 # Unset proxy configuration
-unset http_proxy https_proxy
+unset http_proxy https_proxy HTTP_PROXY HTTPS_PROXY
