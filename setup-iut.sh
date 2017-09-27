@@ -69,13 +69,13 @@ for SETUP in $SETUPIUT; do
 		# Setup Gnome
 		GNOME)
 			# Copy the IUT wallpaper
-			cp -fv config-iut/rt_wallpaper_2013.png /usr/share/wallpapers/
+			cp -fv config-iut/rt_wallpaper_2017.svg /usr/share/wallpapers/
 			# Make the necessary directories for dconf
 			mkdir -p /etc/dconf/profile
 			mkdir -p /etc/dconf/db/local.d/locks
 			# Create the dconf user profile
-			echo 'user-db:user
-			system-db:local' > /etc/dconf/profile/user
+			echo 'user-db:user' > /etc/dconf/profile/user
+			echo 'system-db:local' >> /etc/dconf/profile/user
 			# Setup Gnome settings for IUT
 			cp -fv config-iut/gnome-iut.conf /etc/dconf/db/local.d/
 			# Lockdown Gnome settings
