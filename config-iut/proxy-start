@@ -5,13 +5,14 @@
 #
 
 # Read proxy username
+echo "Proxy authentication"
 echo -n "Username: "
 read PROXY_USER
 # Read proxy password
 echo -n "Password: "
 read -s PROXY_PASSWORD
 # Start CNTLM service
-cntlm -u $PROXY_USER -p $PROXY_PASSWORD
+cntlm -u $PROXY_USER -p $PROXY_PASSWORD -d ADAUX 192.168.14.125:8080
 # Export proxy configuration
 export http_proxy=http://127.0.0.1:3128
 export https_proxy=http://127.0.0.1:3128

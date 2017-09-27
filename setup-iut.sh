@@ -59,9 +59,6 @@ for SETUP in $SETUPIUT; do
 			# Disable CNTLM service
 			systemctl stop cntlm
 			systemctl disable cntlm
-			# Configure CNTLM
-			cp -fv /etc/cntlm.conf /etc/cntlm.conf.$DATE
-			cp -fv config-iut/cntlm.conf /etc/cntlm.conf
 			# Copy the scripts to start and stop the local proxy
 			cp -fv config-iut/proxy-start /usr/local/sbin/
 			cp -fv config-iut/proxy-stop /usr/local/sbin/
