@@ -60,7 +60,7 @@ for SETUP in $SETUPIUT; do
 			systemctl stop cntlm
 			systemctl disable cntlm
 			# Copy the scripts to start and stop the local proxy
-			cp -fv config-iut/proxy.sh /etc/profile.d/
+			cat config-iut/proxy.sh >> /etc/bash.bashrc
 		;;
 		# Setup Gnome
 		GNOME)
