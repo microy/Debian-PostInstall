@@ -61,6 +61,10 @@ for SETUP in $SETUPIUT; do
 			systemctl disable cntlm
 			# Copy the scripts to start and stop the local proxy
 			cat config-iut/proxy.sh >> /etc/bash.bashrc
+			# Configure sudo to keep proxy environment variables
+			echo '# Keep proxy environment variables
+			Defaults	env_keep += "http_proxy https_proxy HTTP_PROXY HTTPS_PROXY"' > /etc/sudoers.d/proxy
+			chmod 440 /etc/sudoers.d/proxy
 		;;
 		# Setup Gnome
 		GNOME)
