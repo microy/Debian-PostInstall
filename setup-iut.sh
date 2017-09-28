@@ -64,8 +64,9 @@ for SETUP in $SETUPIUT; do
 		;;
 		# Setup Gnome
 		GNOME)
-			# Copy the IUT wallpaper
+			# Copy the IUT wallpapers
 			cp -fv config-iut/rt_wallpaper_2017.svg /usr/share/wallpapers/
+			cp -fv config-iut/rt_wallpaper_2017_alt.svg /usr/share/wallpapers/
 			# Make the necessary directories for dconf
 			mkdir -p /etc/dconf/profile
 			mkdir -p /etc/dconf/db/local.d/locks
