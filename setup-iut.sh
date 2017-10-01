@@ -62,15 +62,14 @@ for SETUP in $SETUPIUT; do
 			# Copy the scripts to start and stop the local proxy
 			cat config-iut/proxy.sh >> /etc/bash.bashrc
 			# Configure sudo to keep proxy environment variables
-			echo '# Keep proxy environment variables
-			Defaults	env_keep += "http_proxy https_proxy HTTP_PROXY HTTPS_PROXY"' > /etc/sudoers.d/proxy
+			echo '# Keep proxy environment variables' > /etc/sudoers.d/proxy
+			echo 'Defaults	env_keep += "http_proxy https_proxy HTTP_PROXY HTTPS_PROXY"' >> /etc/sudoers.d/proxy
 			chmod 440 /etc/sudoers.d/proxy
 		;;
 		# Setup Gnome
 		GNOME)
 			# Copy the IUT wallpapers
-			cp -fv config-iut/rt_wallpaper_2017.svg /usr/share/wallpapers/
-			cp -fv config-iut/rt_wallpaper_2017_alt.svg /usr/share/wallpapers/
+			cp -fv config-iut/rt_wallpaper_2017*.svg /usr/share/wallpapers/
 			# Make the necessary directories for dconf
 			mkdir -p /etc/dconf/profile
 			mkdir -p /etc/dconf/db/local.d/locks
