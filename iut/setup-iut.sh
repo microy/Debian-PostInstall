@@ -9,9 +9,9 @@ DATE=$(date "+%Y%m%d")
 
 # Configure system banners
 cp -fv /etc/issue /etc/issue.$DATE
-cp -fv config-iut/issue /etc/issue
+cp -fv config/issue /etc/issue
 cp -fv /etc/issue.net /etc/issue.net.$DATE
-cp -fv config-iut/issue.net /etc/issue.net
+cp -fv config/issue.net /etc/issue.net
 cp -fv /etc/motd /etc/motd.$DATE
 : > /etc/motd
 
@@ -21,7 +21,7 @@ sed -i 's/^#Banner.*/Banner \/etc\/issue.net/' /etc/ssh/sshd_config
 systemctl restart ssh
 
 # Add a clone hosts file for system cloning
-cp -fv config-iut/hosts.clone /etc/hosts.clone
+cp -fv config/hosts.clone /etc/hosts.clone
 
 # Select additionnal setup
 SETUPIUT=$(whiptail --title "IUT Configuration" --checklist  --separate-output \
@@ -37,7 +37,7 @@ for SETUP in $SETUPIUT; do
 		# Setup APT
 		APT)
 			# Configure APT sources
-			cp -fv config-iut/sources.list /etc/apt/sources.list
+			cp -fv config/sources.list /etc/apt/sources.list
 			# Update package database
 			apt update
 		;;
@@ -60,7 +60,7 @@ for SETUP in $SETUPIUT; do
 			systemctl stop cntlm
 			systemctl disable cntlm
 			# Copy the scripts to start and stop the local proxy
-			cat config-iut/proxy.sh >> /etc/bash.bashrc
+			cat config/proxy.sh >> /etc/bash.bashrc
 			# Configure sudo to keep proxy environment variables
 			echo '# Keep proxy environment variables' > /etc/sudoers.d/proxy
 			echo 'Defaults	env_keep += "http_proxy https_proxy HTTP_PROXY HTTPS_PROXY"' >> /etc/sudoers.d/proxy
@@ -69,7 +69,7 @@ for SETUP in $SETUPIUT; do
 		# Setup Gnome
 		GNOME)
 			# Copy the IUT wallpapers
-			cp -fv config-iut/rt_wallpaper_2017*.svg /usr/share/wallpapers/
+			cp -fv config/rt_wallpaper_2017*.svg /usr/share/wallpapers/
 			# Make the necessary directories for dconf
 			mkdir -p /etc/dconf/profile
 			mkdir -p /etc/dconf/db/local.d/locks
@@ -77,9 +77,9 @@ for SETUP in $SETUPIUT; do
 			echo 'user-db:user' > /etc/dconf/profile/user
 			echo 'system-db:local' >> /etc/dconf/profile/user
 			# Setup Gnome settings for IUT
-			cp -fv config-iut/gnome-iut.conf /etc/dconf/db/local.d/
+			cp -fv config/gnome-iut.conf /etc/dconf/db/local.d/
 			# Lockdown Gnome settings
-			cp -fv config-iut/gnome-iut-locks.conf /etc/dconf/db/local.d/locks/
+			cp -fv config/gnome-iut-locks.conf /etc/dconf/db/local.d/locks/
 			# Update dconf
 			dconf update
 		;;
