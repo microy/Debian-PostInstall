@@ -1,6 +1,6 @@
 #! /bin/sh
 
-# Ignore the sloopback interface
+# Ignore the loopback interface
 if [ "$METHOD" = loopback ]; then
     exit 0
 fi
