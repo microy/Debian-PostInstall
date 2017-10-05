@@ -52,7 +52,7 @@ for SETUP in $SETUPIUT; do
 			systemctl stop cntlm
 			systemctl disable cntlm
 			# Copy the scripts to start and stop the local proxy
-			cat config/proxy.sh >> /etc/bash.bashrc
+			cp -fv config/proxy /etc/bashrc.d/proxy
 			# Configure sudo to keep proxy environment variables
 			echo '# Keep proxy environment variables' > /etc/sudoers.d/proxy
 			echo 'Defaults	env_keep += "http_proxy https_proxy HTTP_PROXY HTTPS_PROXY"' >> /etc/sudoers.d/proxy
