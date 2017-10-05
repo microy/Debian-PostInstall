@@ -69,11 +69,11 @@ alias tree='tree -C --dirsfirst'
 alias ssh-nokey='ssh -oStrictHostKeyChecking=no -oUserKnownHostsFile=/dev/null'
 alias apt-backports='apt -t stretch-backports'
 
-# Import optional configurations from /etc/bashrc.d
+# Import local configurations from /etc/bashrc.d
 if [ -d /etc/bashrc.d ]; then
 	for bashrc_file in /etc/bashrc.d/* ; do
-		if [ -f "$bashrc_file" ]; then
-			source "$bashrc_file"
+		if [ -r "$bashrc_file" ]; then
+			. "$bashrc_file"
 		fi
 	done
 	unset -v bashrc_file
