@@ -15,11 +15,6 @@ cp -fv config/issue.net /etc/issue.net
 cp -fv /etc/motd /etc/motd.$DATE
 : > /etc/motd
 
-# Configure SSH banner
-cp -fv /etc/ssh/sshd_config /etc/ssh/sshd_config.$DATE
-sed -i 's/^#Banner.*/Banner \/etc\/issue.net/' /etc/ssh/sshd_config
-systemctl restart ssh
-
 # Add a clone hosts file for system cloning
 cp -fv config/hosts.clone /etc/hosts.clone
 
