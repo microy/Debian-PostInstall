@@ -39,7 +39,7 @@ PS1+="\[${host_style}\]\h"; # Host
 PS1+="\[\e[m\]:";           # :
 PS1+="\[\e[36m\]\w";        # Working directory
 PS1+="\[\e[m\]\\$ ";        # $
-
+unset -v user_style host_style
 
 # Enable bash completion in interactive shells
 if ! shopt -oq posix; then
