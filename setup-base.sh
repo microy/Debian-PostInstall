@@ -23,7 +23,7 @@ apt -y autoclean
 cp -fv /etc/bash.bashrc /etc/bash.bashrc.$DATE
 cp -fv config/bash.bashrc /etc/bash.bashrc
 
-# Add a directory for optional configurations
+# Add a directory for local Bash configurations
 mkdir -v /etc/bashrc.d
 
 # Remove local bashrc files
