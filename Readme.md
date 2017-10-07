@@ -18,6 +18,18 @@ Post-installation scripts for Debian stable.
   - Configure the system theme (Joy)
   - Configure Gnome Shell
 
+### NTP
+
+- Configure NTP client for french time servers
+
+### IP address
+
+- Show active IP addresses in the pre-login console message
+
+### IPv6 Temporary address
+
+- Activate IPv6 temporary addresses on all interfaces
+
 ### IUT
 
   - Configure system banners
@@ -26,14 +38,6 @@ Post-installation scripts for Debian stable.
   - Configure Cntlm to use our local proxy server (optionnal)
   - Configure Gnome Shell (optionnal)
 
-
-### NTP
-
-  - Configure NTP client for french time servers
-
-### IP address
-
-  - Show active IP addresses in the pre-login console message
 
 ## Install scripts
 
@@ -44,3 +48,5 @@ Install some applications :
   - Firmware
   - VirtualBox Guest additions
   - Zero GRUB timeout
+  - Minicom
+  
