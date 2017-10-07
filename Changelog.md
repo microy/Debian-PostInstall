@@ -1,6 +1,10 @@
 # Changelog
 
-## Master
+## Master
+
+
+
+## 9.1 (2017.10.07)
 
   - Bash : Increase history size, unset local variables, add a /etc/bashrc.d directory for local configurations, add an alias for APT backports
   - Fonts : Add a local font rendering configuration file
@@ -8,7 +12,7 @@
   - Minicom : Add an install script with default setup
   - CNTML : Fix proxy scripts
   - GRUB EFI : Add an re-install script
-  - IPv6 temporary address : Add a script to activate IPv6 temporary addresses on every interface
+  - IPv6 : Add a script to activate IPv6 temporary addresses on every interface
   - NTP : Fix the configuration
   - IUT : Isolate the configuration and the setup
 
